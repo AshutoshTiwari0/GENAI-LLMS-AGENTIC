@@ -23,3 +23,11 @@ TO SOLVE THESE ISSUES, <strong>"RUNNABLES"</strong> WAS MADE.
 Langchain said sab kuch ek runnable hai.
 
 Sabke aage bas .invoke() lagao aur istemal kro 
+
+
+Types of Runnables 
+1. Sequece Runnable
+2. Parallel Runnable
+
+Sequece Runnable-> A|B|C O/P of A = I/P of B
+Parallel Runnable-> A|B|C FOR C WE CAN GET I/P FROM A,B BOTH
