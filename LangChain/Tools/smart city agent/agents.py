@@ -126,37 +126,42 @@ llm_with_tool=llm.bind_tools([get_weather,get_news])
 #making an agent loop
 
 messages=[]
-
 print("=================City Intelligence System=================")
 print("Type EXIT to quit")
 
 while True:
-    user_input=input("YOU:")
-    if user_input.lower=="exit":
+    user_input = input("YOU: ")
+    if user_input.lower() == "exit":
         break
+
     messages.append(HumanMessage(content=user_input))
 
-    while True: #loop to handle tools
-        result=llm_with_tool.invoke(messages)
-
+    while True:  # inner loop to handle tool calls
+        result = llm_with_tool.invoke(messages)
         messages.append(result)
 
-        #tool input
-        #check if tool is needed or not. ho skata dono use ho rhe ho Example="Get latest news and weather about noida"
-        if result.tool_calls:
-            for tool_call in result.tool_calls:
-                tool_name= tool_call['name']
+        if not result.tool_calls:
+            # No tools needed — final answer
+            print(f"AGENT: {result.content}")
+            break
 
-                #human in the loop
-                confirm=input("Agent wants to call {tool_name}. Approve (YES/NO)")
-                if confirm.lower()=="no":
-                    print("tool call denied")
-                    break
+        # Handle each tool call
+        for tool_call in result.tool_calls:
+            tool_name = tool_call['name']
 
-                #execute tool
-                tool_result=tools[tool_name].invoke(tool_call)
+            confirm = input(f"Agent wants to call '{tool_name}'. Approve? (YES/NO): ")
 
-                
-
-
-
+            if confirm.strip().lower() == "no":
+                print(f"Tool call '{tool_name}' denied.")
+                # Must still append ToolMessage to keep message order valid
+                messages.append(ToolMessage(
+                    content="Tool call was denied by the user.",
+                    tool_call_id=tool_call['id']
+                ))
+            else:
+                tool_result = str(tools[tool_name].invoke(tool_call))
+                messages.append(ToolMessage(
+                    content=tool_result,
+                    tool_call_id=tool_call['id']
+                ))
+        # After all ToolMessages appended, loop again to get LLM's final answer
