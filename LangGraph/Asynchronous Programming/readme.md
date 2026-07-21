@@ -1,0 +1,1 @@
+Asynchronous Programming is used to run things in parallel. So in agentic AI we can use it to run agents in parallel.
