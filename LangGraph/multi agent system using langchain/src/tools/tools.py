@@ -22,6 +22,7 @@ tavily_client = TavilyClient(api_key=tavily_api_key)
 #function to search web using tavily
 @tool
 def web_search(query):
+    """Function to search the given query on the web"""
     response=tavily_client.search(query=query,search_depth="basic",max_results=5)
 
     #print(response) #we do not want whole result we only want urls. Info ham using beautiful soup se nikal lege
