@@ -1,0 +1,2453 @@
+
+OOSD Full notes
+Object Oriented System Design (Dr. A.P.J. Abdul Kalam Technical University)
+Object Oriented System Design (Dr. A.P.J. Abdul Kalam Technical University)
+
+Amity School of Engineering & Technology 
+Amity University 
+Object Oriented System Design 
+Code: CSE416 
+Prepared By 
+Aditya Tandon 
+Module Notes 
+Department of Computer Science & Engineering 
+ODD Semester 2018-19 batch 
+Object Oriented System Design          
+Page: 1/69  
+
+    
+UNIT-1 
+OBJECT ORIENTED SYSTEM DESIGN 
+ 
+1.1 Introduction: 
+ 
+ The term “object oriented” means that software is a collection of discrete objects.   
+ Object-oriented development method supports for developing software components which are 
+reusable and highly modular in nature. 
+ 
+1.2 Object Oriented Paradigm 
+ Object-oriented paradigm is a programming paradigm that uses "objects" and their interactions to 
+design applications and computer programs.  
+ It is based on several techniques, including  
+ Inheritance,  
+ Modularity  
+ Polymorphism  
+ Encapsulation.  
+ It was not commonly used in mainstream software application development until the early 1990s.  
+ Many modern programming languages now support OOP. 
+ 
+1.3 OBJECT-ORIENTED TERMINOLOGIES 
+ 
+Basic concepts of object orientation 
+1.3.1 CLASS 
+ Class is a template inclusive of data and methods (that act on the data) for     creating objects.  
+ Each instance (object) of a class is unique.  
+ A class is a more general abstraction.  
+ Class is a concept that describes a set of objects that are specified in the same way.  
+ Classes are user defined data types and behave like built in types of a programming language. 
+ Example:   
+ 
+ All objects of a class are having same specification as shown in the figure-1.1 below: 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+ Programming form of a class is shown below 
+ More real life example are given below (figure-1.4): 
+Object Oriented System Design          
+Page: 3/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 4/69  
+    
+1.3.2 OBJECT 
+ An object represents a particular instance of a class 
+ The object has ‘state, behavior and identity’. 
+ State represents the particular condition that an object is in at a given moment 
+ Behavior stands for the things that the object can do that are relevant to model. 
+ Identity means that every object is unique. 
+ AA  CCaassee::  Assume that there is a person whose name is Ahmed and he is reading and studying then 
+for object: 
+   Object :  Person 
+   Identity :  Ahmed 
+   Behavior :  Reading 
+   State  :  Studying 
+ 
+1.3.2.1 OBJECT STATE 
+ The state of an object is the condition of the object or a set of circumstances describing the object 
+ The concept of object state is fundamental to an understanding of the way that the behavior of an 
+object-oriented software system is controlled so that the system responds in an appropriate way 
+when an external event occurs.  
+ Each state is represented by the current values of data within the object.  
+ Each state is also characterized by a difference in behavior. 
+ For example, the control software must be designed to take account of all possible states of the 
+aircraft like parked, climbing, flying level on auto-pilot, and landing. 
+ The appropriate control behaviors for each state such as shut down engine, full throttle, climb, 
+descend, turn.  
+ 
+1.3.2.2 Class and Objects 
+ Classes reflect concepts; objects reflect instances that embody those concepts 
+ 
+ 
+1.3.3 INHERITANCE 
+ The concept of deriving a new child (derived) class from an existing parent (super). 
+ Inheritance allows the objects of one class to acquire the properties of objects of another class. 
+ This provides code reusability  
+ Classes can be arranged into hierarchies.  
+ Generalization is the relationship between super class and sub class. 
+ There are different types of inheritances like : 
+ Single Level: In this type there will be one base class and one derived class. 
+ Multilevel Inheritance: In this case one class is derived from a second class which in turn is 
+derived from a third class. 
+  Multiple: In this type there will be many base classes but one derived class. 
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+  Hierarchical:  In this type there will be one base class but many derived classes. 
+  Hybrid:  This is a combination (any two or more types of inheritance) of Multiple and 
+Hierarchical Inheritance. 
+ Inheritance is a mechanism for implementing generalization in an object-oriented programming 
+language.  
+ When two classes are related by the mechanism of inheritance, the general class is called super 
+class in relation to the other and the more specialized is called its subclass. 
+ A subclass inherits all the characteristics of its super class. 
+ Inheritance: A Scenario to Understand 
+ Scenario: Let’s take an example of Vehicle, used for transportation services. We can categorize 
+vehicle into two categories namely Land Vehicle and Water Vehicle, which we can further 
+categorize into car, truck hover craft, and boat respectively. 
+ Question???: Discuss and design diagrammatical representation of the scenario given above and 
+explain the types of inheritance you are using and why? Also tell attributes and operation you 
+want to perform? 
+Object Oriented System Design          
+Page: 5/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 6/69  
+    
+1.3.4 MESSAGE PASSING (Object Communication) 
+ In object-oriented system, objects communicate with each other by sending message, how people 
+communicate with each other. 
+ In the object-oriented programming terms it is called as encapsulation. 
+ Encapsulation defined as a bundle of data together with some operations that act on the data. 
+ An object knows only its own data and its own operations. 
+ Each operation has a specific signature.  
+ Message passing is a way of insulating each object from needing to know any of the internal 
+details of other objects. 
+ When an object receives a message it can tell instantly whether the message is relevant to it or not 
+based on the valid signature to one of its operations. 
+  
+1.3.5 POLYMORPHISM: WWhhaatt?? 
+ If we bi-furcated the word Polymorphism we get “Poly” means many and “Morphism” means 
+form. 
+ 
+ Polymorphism literally means ‘an ability to appear as many forms’. 
+ Polymorphism is a powerful concept for the information systems developer.  
+ It permits a clear separation between different sub-systems that handle superficially similar tasks 
+in a different manner. 
+ For example: 
+There are different ways of calculating an employee’s pay. For full-time employees are paid a 
+salary that depends on his / her grade; part-time employees payments are based on number of 
+hours worked. The temporary employee payment differs in that no deductions are made for the 
+company pension scheme. 
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+1.3.6 ENCAPSULATION 
+ The wrapping up of attribute and operation into one unit is called Encapsulation.  
+ This allows the data is not accessible to the outside world and only those methods which are wrapped 
+in the class. 
+ In Object Oriented Programming, encapsulation is an attribute of object design.  
+ It means that all of the object's data is contained and hidden in the object and access to it restricted to 
+members of that class. 
+ Programming languages aren't quite so strict and allow differing levels of access to the object's data.  
+ The first three levels of access shown below are in both C++ and Java 
+ Public: All Objects can access it. 
+ Protected: Access is limited to members of the same class or descendants. 
+ Private: Access is limited to members of the same class.  
+ Package / Internal: Access is limited to the current package.  
+1.3.7 DYNAMIC BINDING 
+ In object oriented programming, dynamic binding refers to determining the exact implementation 
+of a request based on both the request (operation) name and the receiving object at the run-time.  
+ It often happens when invoking a derived class's member function using a pointer to its super 
+class.  
+ The implementation of the derived class will be invoked instead of that of the super class.  
+ It allows substituting a particular implementation using the same interface and enables 
+polymorphism. 
+1.4 Introduction to UML 
+ Modeling is the designing of software applications before coding.  
+ Modeling is an Essential Part of large software projects, and helpful to medium and even small 
+projects. 
+ The Unified Modeling Language (UML) is a graphical language for visualize, and document models 
+of software systems, including their structure and design, in a way that meets all of these requirements 
+ Visualizing: Graphical models with precise semantics  
+ Specifying: Models are precise, unambiguous and complete to capture all important Analysis, 
+Design, and Implementation decisions.  
+ Constructing: Models can be directly connected to programming languages, allowing forward 
+and reverse engineering  
+ Documenting: Diagrams capture all pieces of information collected by development team, 
+allowing sharing and communicating the embedded knowledge. 
+ UML defines the following nine diagrams 
+ Use case diagrams  
+ Class diagrams  
+ Object diagrams  
+ Sequence diagrams  
+ Collaboration diagrams  
+ State Chart diagrams  
+ Activity diagrams  
+ Component diagrams  
+ Deployment diagrams  
+ Divided into three major categories: 
+ Structure Diagrams include the Class Diagram, Object Diagram, Component Diagram, and 
+Deployment Diagram.  
+ Behavior Diagrams include the Use Case Diagram, Activity Diagram, and State Machine 
+Diagram.  
+ Interaction Diagrams include the Sequence Diagram, Collaboration Diagram. 
+Object Oriented System Design          
+Page: 7/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 8/69  
+    
+1.5 More about Unified Modeling Language (UML)  
+UML is a language for visualizing, specifying, constructing and documenting the artifacts of a software 
+intensive system. To understand the UML, you need to form a conceptual model of the language, and this 
+requires learning three major elements: the UML's basic building blocks, the rules that dictate how those 
+building blocks may be put together, and some common mechanisms that apply throughout the UML. 
+Once you have grasped these ideas, you will be able to read UML models and create some basic ones. As 
+you gain more experience in applying the UML, you can build on this conceptual model, using more 
+advanced features of the language.  
+UML is a set of notations purposely composed to address the problem of specifying Object Oriented 
+Systems managed by the OMG. OO systems pose unique challenge to all stakeholders in the development 
+lifecycle. UML provides a common language that defines the System under Development (SUD) in a 
+way that is meaningful to all stakeholders.  
+1.6 Characteristics of UML  
+ Abstract: Good for presenting important ideas, uncluttered by detail. Like natural language, unlike 
+programming language  
+ Precise: Helps expose gaps and inconsistencies. Like programming language, unlike natural language  
+ Visual (mainly): Easy to see the main objects and relationships. Used to complement a good 
+narrative in requirements and design documentation. discussing design ideas at the whiteboard 
+ Non-prescriptive: You use it how it best suits your development culture  
+1.7 Relationships in the UML  
+There are four kinds of relationships in the UML:  
+1. Dependency  
+2. Association  
+3. Generalization  
+4. Realization  
+ 
+These relationships are the basic relational building blocks of the UML. You use them to write well
+formed models. First, a dependency is a semantic relationship between two things in which a change to 
+one thing (the independent thing) may affect the semantics of the other thing (the dependent thing). 
+ 
+Graphically, a dependency is rendered as a dashed line, possibly directed, and occasionally including a 
+label.  
+ 
+Second, an association is a structural relationship that describes a set of links, a link being a connection 
+among objects. Aggregation is a special kind of association, representing a structural relationship between 
+a whole and its parts. Graphically, an association is rendered as a solid line, possibly directed, 
+occasionally including a label, and often containing other adornments, such as multiplicity and role names 
+which will discuss later  
+ 
+Third, a generalization is a specialization/generalization relationship in which objects of the specialized 
+element (the child) are substitutable for objects of the generalized element (the parent). In this way, the 
+child shares the structure and the behavior of the parent. Graphically, a generalization relationship is 
+rendered as a solid line with a hollow arrowhead pointing to the parent.  
+ 
+Fourth, a realization is a semantic relationship between classifiers, wherein one classifier specifies a 
+contract that another classifier guarantees to carry out. You'll encounter realization relationships in two 
+places: between interfaces and the classes or components that realize them, and between use cases and the 
+collaborations that realize them. 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+1.8 When to use Packages  
+Grouping Things are the organizational parts of UML models. These are the boxes into which a model 
+can be decomposed. In all, there is one primary kind of grouping thing, namely, packages.  
+A package is a general-purpose mechanism for organizing elements into groups. Structural things, 
+behavioral things, and even other grouping things may be placed in a package. Unlike components (which 
+exist at run time), a package is purely conceptual (meaning that it exists only at development time). 
+Graphically, a package is rendered as a tabbed folder, usually including only its name and, sometimes, its 
+contents.  
+Packages are the basic grouping things with which you may organize a UML model. There are also 
+variations, such as frameworks, models, and subsystems (kinds of packages).  
+The idea of package can be applied to any model element, not just classes. Without some heuristics to 
+group classes together, the grouping becomes arbitrary.  
+Package diagram is a diagram that shows packages of classes and the dependencies among them. Strictly 
+speaking, a package diagram is just a class diagram that shows only packages and dependencies. Package 
+diagram is not an official UML diagram.  
+A dependency exists between two elements if changes to the definition of one element may cause changes 
+to the other. With classes, dependencies exits for various reasons. One class sends a message to another; 
+one class has another as part of its data; one class mentions another as a parameter to an operation. If a 
+class changes its interface, any message it sends may no longer valid. 
+Example of a package diagram 
+1.9 UML Diagrams  
+A diagram is the graphical presentation of a set of elements, most often rendered as a connected graph of 
+vertices (things) and arcs (relationships). You draw diagrams to visualize a system from different 
+perspectives, so a diagram is a projection into a system.  
+Object Oriented System Design          
+Page: 9/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 10/69  
+    
+In practice, however, a small number of common combinations arise, which are consistent with the five 
+most useful views that comprise the architecture of a software-intensive system. For this reason, the UML 
+includes nine such diagrams:  
+ 
+1. Class diagram  
+2. Object diagram  
+3. Use case diagram  
+4. Sequence diagram  
+5. Collaboration diagram  
+6. State chart diagram  
+7. Activity diagram  
+8. Component diagram  
+9. Deployment diagram  
+ 
+A class diagram shows a set of classes, interfaces, and collaborations and their relationships. These 
+diagrams are the most common diagram found in modeling object-oriented systems. Class diagrams 
+address the static design view of a system. Class diagrams that include active classes address the static 
+process view of a system.  
+An object diagram shows a set of objects and their relationships. Object diagrams represent static 
+snapshots of instances of the things found in class diagrams. These diagrams address the static design 
+view or static process view of a system as do class diagrams, but from the perspective of real or 
+prototypical cases.  
+A use case diagram shows a set of use cases and actors (a special kind of class) and their relationships. 
+Use case diagrams address the static use case view of a system. These diagrams are especially important 
+in organizing and modeling the behaviors of a system.  
+ 
+Both sequence diagrams and collaboration diagrams are kinds of interaction diagrams. An interaction 
+diagram shows an interaction, consisting of a set of objects and their relationships, including the 
+messages that may be dispatched among them.  
+ 
+Interaction diagrams address the dynamic view of a system. A sequence diagram is an interaction 
+diagram that emphasizes the time-ordering of messages; a collaboration diagram is an interaction 
+diagram that emphasizes the structural organization of the objects that send and receive messages. 
+Sequence diagrams and collaboration diagrams are isomorphic, meaning that you can take one and 
+transform it into the other.  
+ 
+A statechart diagram shows a state machine, consisting of states, transitions, events, and activities. 
+Statechart diagrams address the dynamic view of a system. They are especially important in modeling the 
+behavior of an interface, class, or collaboration and emphasize the event-ordered behavior of an object, 
+which is especially useful in modeling reactive systems. 
+ 
+An activity diagram is a special kind of a statechart diagram that shows the flow from activity to activity 
+within a system. Activity diagrams address the dynamic view of a system. They are especially important 
+in modeling the function of a system and emphasize the flow of control among objects.  
+ 
+A component diagram shows the organizations and dependencies among a set of components. 
+Component diagrams address the static implementation view of a system. They are related to class 
+diagrams in that a component typically maps to one or more classes, interfaces, or collaborations.  
+ 
+A deployment diagram shows the configuration of run-time processing nodes and the components that 
+live on them. Deployment diagrams address the static deployment view of architecture. They are related 
+to component diagrams in that a node typically encloses one or more components.  
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+This is not a closed list of diagrams. Tools may use the UML to provide other kinds of diagrams, 
+although these nine are by far the most common you will encounter in practice.  
+1.10 Use Case Diagram  
+A diagram that shows a set of use cases and actors and their relationships. Use cases represent system 
+functionality, the requirements of the system from the user‟s perspective. Use case diagrams show actor 
+and use case together with their relationships. The use cases represent functionality of a system or a 
+classifier, like a subsystem or a class, as manifested to external interactors with the system or the 
+classifier.  
+1.11 Notations in Use Case Diagram  
+Use case: A description of a set of sequences of actions, including variants, that system performs that 
+yields an observable value to an actor.  
+Actor: The people or systems that provide or receive information from the system; they are among the 
+stakeholders of a system. Actors that stimulate the system and are the initiators of events are called 
+primary actors (active)Actors that only receive stimulate from the system are called secondary actors 
+(passive) 
+A basic Use Case diagram for sales order processing 
+1.12 Guide lines for drawing Use Case Diagrams  
+ Use cases should ideally begin with a verb – i.e. generates report. Use cases should NOT be open 
+ended – i.e. Register (instead should be named as Register New User)  
+ Avoid showing communication between actors.  
+ Actors should be named as singular. i.e., student and NOT students. NO names should be used – 
+i.e. John, Sam, etc.  
+ Do NOT show behaviour in a use case diagram; instead only depict only system functionality.  
+1.13 Use case diagram does not show sequence.  
+There are several standard relationships among use case or between actors and use cases. 
+ Association – The participation of an actor in a use case, i.e., instances of the actor and instances 
+of the use case communicate with each other. This is the only relationship between actors and use 
+cases. 
+Object Oriented System Design          
+Page: 11/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 12/69  
+    
+ Extend – An extend relationship from use case A to use case B indicates that an instance of use 
+case B may be extended (subject to specific conditions specified in the extension) by the behavior 
+specified by A. The behavior is inserted at the location defined by the extension point in B which 
+is referenced by the extend relationship. 
+ Generalization – A generalization from use case A to use case B indicates that A is a 
+specialization of B. 
+ Include – An include relationship from use case A to use case B indicates that an instance of the 
+use case A will also include the behavior as specified by B. The behavior is included at the 
+location which defined in A. 
+ 
+1.14 Use Case Specification  
+ 
+Use case specification is synonymous to use case description .and use case definition and can used 
+interchangeably. Use case specification defines information that pertains to a particular use case which is 
+important in understanding the purpose behind the use case. Use case specification is written for every 
+use case. A use case specification has one or more flow of events or pathways association with it.  
+ 
+A flow of events or pathway is a textual description embodying sequence of events with regards to the 
+use case and is part of the use case specification. Flow of events is understood by the customer. A detailed 
+description is necessary so that one can better understand the complexity that might be involved in 
+realizing the use cases.  
+ 
+Use case specification serves as a “bridge‟ between stakeholders of a system and the development team.  
+ 
+Types of Flow of Events  
+ 
+ Basic Flow of Events or Happy Path – You get to the ATM and successfully withdraw money  
+ Alternate Flow of Events or Alternate Pathway - You get to the ATM but could not withdraw 
+money due to insufficient funds in your account.  
+ Exception Flow of Events or Exception Pathways or Unhappy Pathway – You get to the ATM 
+machine, but your valid pin number is not accepted. 
+ 
+Case Study – Remulak Productions  
+ 
+Remulak Productions is a very small company located in Newport Hills, Washington, a suburb of Seattle.  
+ 
+Remulak specializes in finding hard-to-locate musical instruments –in particular guitars – ranging from 
+traditional instruments to ancient varieties no longer produced. Remulak also sells rare and in-demand 
+sheet music. Further, it is considering adding to its product line other products that are not as unique as its 
+instruments; include recording and mixing technology, microphones, and recordable compact disk (CD) 
+players. Remulak is a very ambitious company; it hopes to open a second order-processing location on 
+the East Coast within a year.  
+ 
+Most of Remulak’s orders are taken in-house by order entry clerks. However, some of its sales come from 
+third-party commercial organizations. Remulak’s founder, owner, and president, Jeffery Homes, realizes 
+that he cannot effectively run his company with its current outdated order entry and billing system. Your 
+challenge is to design and implement a system that not only meets the company’s immediate needs but 
+also is flexible enough to support other types of products in the future.  
+ 
+Suggested Use Case Diagram 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+Use Case Specification  
+Use Case: Process Orders  
+Name: Process Orders.  
+Description:  
+This use-case starts when an order is either initiated or inquired about. It handles all aspects of the initial 
+definition and authorization of an order, and it ends when the order clerk completes a session with a 
+customer.  
+Author(s): Rene Becnel.  
+Actor(s): Order clerk.  
+Location(s): Newport Hills, Washington.  
+Status: Pathways defined.  
+Priority: 1.  
+Assumption(s):  
+Orders will be taken by the order clerk until the customer is comfortable with the specialized services 
+being provided.  
+Precondition(s):  
+Order clerk has logged into the system.  
+Post condition(s):  
+• Order is placed.  
+• Inventory is reduced.  
+Primary (Happy) Path:  
+• Customer calls and orders a guitar and supplies, and pays with a credit card.  
+Alternate Pathway(s):  
+• Customer calls and orders a guitar and supplies, and uses a purchase order.  
+• Customer calls and orders a guitar and supplies, and uses the Remulak easy  
+finance plan to pay.  
+• Customer calls and orders an organ/ and pays with a credit card.  
+• Customer calls and orders an organ, and uses a purchase order.  
+Exception Pathway(s):  
+• Customer calls to place an order using a credit card, and the card is invalid.  
+• Customer calls with a purchase order but has not been approved to use the purchase order method.  
+• Customer calls to place an order, and the desired items are not in stock.  
+Object Oriented System Design          
+Page: 13/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 14/69  
+    
+1.15 Subsystems  
+ 
+ A subsystem is a coherent and independent component of a system. Each subsystem can then be 
+designed independently without affecting the others  
+ 
+ Typically, have a client-server relationship: client calls on the supplier (sends a message) supplier 
+performs some service and replies with result.  
+ 
+ Client must know interface of supplier, but supplier does not have to know interfaces of clients.  
+ 
+ A subsystem is not an object nor a function, but a package of classes. Subsystems are at once a 
+part of a large system. Communication between sub-systems is, by definition, through interfaces. 
+ 
+ Subsystems are provided primarily to help in the organization aspects a block diagram. 
+Subsystems do not define a separate block diagram.  
+ 
+ 
+1.16 When to use a subsystem?  
+ 
+An object-oriented subsystem encapsulates a coherent set of responsibilities in order to ensure that it has 
+integrity and can be maintained. A subsystem has a specification of the behavior collectively offered by 
+the model elements contained in the subsystem. This specification of the subsystem consists of operations 
+on the subsystem, together with specification elements such as use cases, state machines, etc.  
+ 
+This is generally a good basis for subsystem structuring because objects that communicate frequently 
+with each other are good candidates for being in the same subsystem. The object depicted on several 
+collaboration diagrams can only be part of one subsystem.  
+ 
+If one object is located at a geographically remote location from another object, the two objects should be 
+in different subsystems (for an example, clients and servers). 
+ 
+Objects that are part of the same composite object should be in the same subsystem.  
+On the other hand, objects in a aggregate subsystem grouped by functional similarity might span 
+geographical boundaries.  
+ 
+The subdivision of an information system into subsystems has the following advantages.  
+ It produces smaller units of development  
+ It helps to maximize reuse at the component level  
+ It helps the developers to cope with complexity  
+ It improves maintainability  
+ It aids portability  
+ 
+Dividing a system into subsystems is an effective strategy for handling the complexity. Sometimes it is 
+only feasible to model a large complex system piece by piece, with the subdivision forced on the 
+developers by the nature of the application. Splitting a system into subsystem can also aid reuse, as each 
+subsystem may correspond to a component that is suitable for reuse in other applications. 
+ 
+There are two general approaches to the division of a software system into subsystems. These are known 
+as layering – so called because the different subsystems usually represent different levels of abstraction- 
+and partitioning, which usually means that each subsystem focuses on a different aspect of the 
+functionality of the system as a whole. In practice both approaches are often used together on one system, 
+so that some of its subsystems are divided by layering, while others are divided by partitioning. 
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+System decomposition 
+In order to develop a complex product or large engineering system, it is common practice to decompose 
+the design problem into smaller sub-problems which can be handled more easily. If any of the sub
+systems are still too complex, they may in turn be further decomposed. Development teams are assigned 
+to each design problem which may represent a component or sub-system of the larger system. One 
+important level of integration takes place within each development team. This is the now common 
+practice of concurrent engineering, in which a cross-functional team addresses the many design and 
+production concerns simultaneously. However, to assure that the entire system works together, the many 
+sub-system development teams must work together. This latter form of integration is often called system 
+engineering. 
+Figure graphically depicts the relationship of problem decomposition and system integration. 
+Distributed Development  
+Distributed information systems have become more common as communications technology has 
+improved and have also become more reliable. An information system may be distributed over computers 
+at the same location or at different locations. A distributed information system may be supported by 
+software products such as distributed database management systems or object request brokers or may 
+adopt service-oriented architecture.  
+This software architecture is based on Object Request Broker (ORB) technology but goes further than the 
+Common Object Request Broker Architecture (CORBA) by using shared, reusable business models (not 
+just objects) on an enterprise-wide scale. The benefit of this architectural approach is that standardized 
+business object models and distributed object computing are combined to give an organization flexibility 
+to improve effectiveness organizationally, operationally, and technologically  
+The benefit of this architectural approach is that standardized business object models and distributed 
+object computing are combined to give an organization flexibility, scalability, and reliability and improve 
+organizational, operational, and technological effectiveness for the entire enterprise. This approach has 
+proven more cost effective than treating the individual parts of the enterprise  
+Distributed/collaborative enterprise builds its new business applications on top of distributed business 
+models and distributed computing technology. Applications are built from standard interfaces with "plug 
+and play" components. At the core of this infrastructure is an off-the-shelf, standards-based, distributed 
+object computing, messaging communication component such as an Object Request Broker (ORB) that 
+meets Common Object Request Broker Architecture (CORBA) standards.  
+This messaging communication hides the following from business applications:  
+ the implementation details of networking and protocols  
+ the location and distribution of data, process, and hosts  
+ production environment services such as transaction management, security, messaging reliability, and 
+persistent storage  
+Object Oriented System Design          
+Page: 15/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 16/69  
+    
+The message communication component links the organization and connects it to computing and 
+information resources via the organization's local or wide area network (LAN or WAN). The message 
+communication component forms an enterprise-wide standard mechanism for accessing computing and 
+information resources. This becomes a standard interface to heterogeneous system components.  
+ 
+Specification and realization elements  
+ 
+Things are the abstractions that are first-class citizens in a model; relationships tie these things together; 
+diagrams group interesting collections of things. Things in the UML There are four kinds of things in the 
+UML:  
+1. Structural things  
+2. Behavioral things  
+3. Grouping things  
+4. Annotational things  
+ 
+These things are the basic object-oriented building blocks of the UML. You use them to write well
+formed models. Structural things are the nouns of UML models. These are the mostly static parts of a 
+model, representing elements that are either conceptual or physical. In all, there are seven kinds of 
+structural things. First, a logical class is a description of a set of objects that share the same attributes, 
+operations, relationships, and semantics.  
+A class implements one or more interfaces. Graphically, a class is rendered as a rectangle; usually 
+including its name, attributes, and operations, as in  
+Second, an interface is a collection of operations that specify a service of a class or component. An 
+interface therefore describes the externally visible behavior of that element. An interface might represent 
+the complete behavior of a class or component or only a part of that behavior.  
+ 
+An interface defines a set of operation specifications (that is, their signatures) but never a set of operation 
+implementations. Graphically, an interface is rendered as a circle together with its name. An interface 
+rarely stands alone. Rather, it is typically attached to the class or component that realizes the interface.  
+ 
+Third, collaboration defines an interaction and is a society of roles and other elements that work together 
+to provide some cooperative behavior that's bigger than the sum of all the elements. Therefore, 
+collaborations have structural, as well as behavioral, dimensions. A given class might participate in 
+several collaborations. Graphically, collaboration is rendered as an ellipse with dashed lines, usually 
+including only its name.  
+ 
+Fourth, a use case is a description of set of sequence of actions that a system performs that yields an 
+observable result of value to a particular actor. A use case is used to structure the behavioral things in a 
+model. A use case is realized by a collaboration. Graphically, a use case is rendered as an ellipse with 
+solid lines, usually including only its name.  
+ 
+Behavioral Things are the dynamic parts of UML models. These are the verbs of a model, representing 
+behavior over time and space. In all, there are two primary kinds of behavioral things.  
+ 
+First, an interaction is a behavior that comprises a set of messages exchanged among a set of objects 
+within a particular context to accomplish a specific purpose. The behavior of a society of objects or of an 
+individual operation may be specified with an interaction. An interaction involves a number of other 
+elements, including messages, action sequences (the behavior invoked by a message), and links (the 
+connection between objects). Graphically, a message is rendered as a directed line, almost always 
+including the name of its operation.  
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+Second, a state machine is a behavior that specifies the sequences of states an object or an interaction 
+goes through during its lifetime in response to events, together with its responses to those events. The 
+behavior of an individual class or a collaboration of classes may be specified with a state machine. 
+A state machine involves a number of other elements, including states, transitions (the flow from state to 
+state), events (things that trigger a transition), and activities (the response to a transition). Graphically, a 
+state is rendered as a rounded rectangle, usually including its name and its sub states, if any.  
+Annotational Things Annotational things are the explanatory parts of UML models. These are the 
+comments you may apply to describe, illuminate, and remark about any element in a model. There is one 
+primary kind of annotational thing, called a note.  
+Structural Modeling  
+Structural model: a view of an system that emphasizes the structure of the objects, including their 
+classifiers, relationships, attributes and operations.  
+Structural modeling –Core Elements 
+Structural modeling –Core Relationships 
+Object Oriented System Design          
+Page: 17/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 18/69  
+    
+Static Structural Diagrams: Shows a graph of classifier elements connected by static relationships. 
+They are of two types  
+ 
+1. Class diagram: classifier view  
+2. Object diagram: instance view  
+ 
+2.1 Class Diagram  
+ 
+A class diagram is a graph of Classifier elements connected by their various static relationships. Note that 
+a “class” diagram may also contain interfaces, packages, relationships, and even instances, such as objects 
+and links. Perhaps a better name would be “static structural diagram” but “class diagram” is shorter and 
+well established. 
+ 
+We can start to show the details of a class by using a simple box or rectangle. The identifier or name of 
+the class goes at the top, below this are shown the properties or attributes, and below this we show the 
+methods or events. 
+  
+Let us look at an example. We will describe a tree, the sort with branches and leaves 
+ 
+ 
+ 
+We know that a tree is of a particular species, it has height which will change gradually throughout its 
+life, as will the number of branches. These are all properties or attributes of any tree. Any tree will also be 
+able to do various things. These are its methods or events, and in the example above we have shown two 
+possibilities; grow, and die. Clearly we could add many more methods and attributes.  
+ 
+2.2 Attributes 
+ The attributes has a different meaning and would be manipulated differently for each of these data 
+types and it is important to determine during analysis which meaning is appropriate. 
+ An attribute data type is declared in UML using the following syntax: 
+ 
+Name ‘:’   type-expression ‘=’ initial-value ‘{property-string’}’ 
+ 
+ The name is the attribute name, 
+ The type-expression is its data type 
+ The initial-value is the value the attribute is set to when the object is first created  
+ The property-string describes a property of the attribute such as constant or fixed 
+ 
+2.3 Operations 
+ 
+ Each operation also has to be specified in terms of the parameters that it passes and returns.  
+ The syntax used for an operation is: 
+ 
+Operation name ‘(‘parameter-list’)’  ‘:’  return-type-expression 
+ An operation’s signature is determined by: 
+ Operation’s name,  
+ The number and type of its parameters and  
+ The type of the return value if any.  
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+2.4 IDENTIFICATION OF CLASS  
+ For identifying class, there is technique called noun identification technique.  
+ It is a technique which can be used to identify classes. 
+ It is done in two steps: 
+ Identify candidate classes by picking up all the nouns and noun phrases out of a requirements 
+specification of the system 
+ Discard candidates which are inappropriate for any reason, renaming the remaining classes if 
+necessary 
+ Inappropriate classes: 
+ Redundant (the same class given more than one name) 
+ Vague 
+ An event or an operation (noun refers to something which is done to, by or in the system) 
+  An attribute 
+ Example 
+Books and journals: The library contain books and journals. It may have several copies of a given book. 
+Some of the books are for short term loans only. All other books may be borrowed by any library member 
+for three weeks. Members of the library can normally borrow up to six items at a time, but members of 
+staff may borrow up to 12 items at one time. Only members of staff may borrow journals. 
+Borrowing: The system must keep track of when books and journals are borrowed and returned, 
+enforcing the rules described above. 
+2.5 Design Guidelines 
+The design guidelines are: 
+ Design clarity: A design should be made as easy to understand as possible. 
+ Don’t over design: Design flexibility to produce designs that may not only satisfy current 
+requirement but may also be capable of supporting a wide range of future requirements. 
+ Control inheritance hierarchies: inheritance hierarchies should be neither too deep nor too shallow. 
+If a hierarchy is too deep it is difficult for the developer to understand easily what features are 
+inherited. 
+ Keep message and operations simple: it is better to limit the number of parameters passed in a 
+message to no more than three.  
+ Design Volatility: A good design will be stable in response to changes in requirements 
+ Evaluate by Scenario: An effective way of testing the suitability of a design 
+Object Oriented System Design          
+Page: 19/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 20/69  
+    
+ 
+ Design by Delegation: A complex object should be decomposed into component objects forming a 
+composition or aggregation. 
+ 
+ Keep classes separate: it is better not to place one class inside another. The internal class is 
+encapsulated by the other class and cannot be accessed independently.  
+ 
+ 
+2.6 DESIGNING ASSOCIATIONS 
+ 
+ Association is the relationship between two classes. 
+ When the association is between two classes, it’s called Binary Association.   
+ When the association is between two instances of the same class, then it’s called reflexive or unary 
+association. 
+ Example:  
+ Binary Association:  Employee works for Employee 
+ Unary Association: A Employee supervises Employees 
+ An association between two classes indicates the possibility that links will exist between instances of 
+the classes. 
+ How attributes is a property of the object in a class, similarly, a link attribute is a property of the links 
+in an association.  
+ The links provide the connections necessary for message passing to occur. 
+ Each link becomes one instance of the class.  
+ 
+For a given association between object A and object B, there can be three possible categories (the 
+following are called multiplicity). 
+1. One to One.  Exactly one instance of Class A is associated with exactly one instance of Class B and 
+vice versa.  Example: A department has exactly one Head and One Head can lead only one 
+department.  
+ 
+2. One to Many: One instance of Class A can have many instance of Class B.  From perspective of 
+Class B, there can be only one Class A   
+Example: A department employs many Professors, but a professor works only for one department  
+3. Many to Many:  For a given instance of Class A there can be many instance of Class B and From 
+Class B perspective there can be many instances of Class A.   
+Example: A student enrolls in many courses and a course has many students.  
+ 
+2.6.1 Associations – some examples 
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+Classes can also contain references to each other.  The Company class has two attributes that reference 
+the Client class.  
+Although this is perfectly correct, it is sometimes more expressive to show the attributes as associations.  
+The above two associations have the same meaning as the attributes in the old version of the Contact 
+class.   
+The first association (the top one) represents the old contactPerson attribute.  There is one contact person 
+in a single Company.  The multiplicity of the association is one to one meaning that for every Company 
+there is one and only one contactPerson and for each contactPerson there is one Company.  
+In the bottom association there are zero or many employees for each company.  Multiplicities can be 
+anything you specify.   
+Some examples are shown: 
+0 
+Zero 
+1 
+One 
+one or many 
+1..* 
+1..2, 10..* 
+one, two or ten and above but not three through nine 
+2.7 Class diagrams in Detail 
+ A Class diagram gives an overview of a system by showing its classes and the relationships among 
+them.  
+ Class diagrams are static -- they display what interacts but not what happens when they do interact. 
+Example 
+The class diagrams below model a customer order from a retail catalog. The central class is the Order. 
+Associated with it is the Customer making the purchase and the Payment. A Payment is one of three 
+kinds: Cash, Check, or Credit. The order contains OrderDetails (line items), each with its associated 
+Item. 
+Object Oriented System Design          
+Page: 21/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 22/69  
+    
+ 
+ 
+UML class notation is a rectangle divided into three parts: class name, attributes, and operations. Names 
+of abstract classes, such as Payment, are in italics. Relationships between classes are the connecting links. 
+ 
+2.8 Our class diagram has three kinds of relationships. 
+ Association -- a relationship between instances of the two classes. There is an association between 
+two classes if an instance of one class must know about the other in order to perform its work. In a 
+diagram, an association is a link connecting two classes.  
+ Aggregation -- an association in which one class belongs to a collection. An aggregation has a 
+diamond end pointing to the part containing the whole. In our diagram, Order has a collection of 
+OrderDetails.  
+ Generalization -- an inheritance link indicating one class is a superclass of the other. A 
+generalization has a triangle pointing to the superclass. Payment is a superclass of Cash, Check, and 
+Credit.  
+ 
+An association has two ends. An end may have a role name to clarify the nature of the association. For 
+example, an OrderDetail is a line item of each Order. 
+ 
+A navigability arrow on an association shows which direction the association can be traversed or queried. 
+An OrderDetail can be queried about its Item, but not the other way around. The arrow also lets you 
+know who "owns" the association's implementation; in this case, OrderDetail has an Item. Associations 
+with no navigability arrows are bi-directional. 
+ 
+The multiplicity of an association end is the number of possible instances of the class associated with a 
+single instance of the other end. Multiplicities are single numbers or ranges of numbers. In our example, 
+there can be only one Customer for each Order, but a Customer can have any number of Orders. 
+This table gives the most common multiplicities. 
+ 
+Multiplicities Meaning 
+0..1 Zero or one instance. The notation n . . m indicates n to m instances. 
+0..*  or  * No limit on the number of instances (including none). 
+1 exactly one instance 
+1..2 above but not three  
+1..* at least one instance 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+Every class diagram has classes, associations, and multiplicities. Navigability and roles are optional items 
+placed in a diagram to provide clarity. 
+2.9 Activity diagrams 
+An activity diagram is essentially a fancy flowchart. Activity diagrams and statechart diagrams are 
+related. While a statechart diagram focuses attention on an object undergoing a process (or on a process 
+as an object), an activity diagram focuses on the flow of activities involved in a single process. The 
+activity diagram shows the how those activities depend on one another. 
+For our example, we used the following process. 
+"Withdraw money from a bank account through an ATM." 
+The three involved classes (people, etc.) of the activity are Customer, ATM, and Bank. The process 
+begins at the black start circle at the top and ends at the concentric white/black stop circles at the bottom. 
+The activities are rounded rectangles. 
+Activity diagrams can be divided into object swimlanes that determine which object is responsible for 
+which activity. A single transition comes out of each activity, connecting it to the next activity. 
+A transition may branch into two or more mutually exclusive transitions. Guard expressions (inside [ ]) 
+label the transitions coming out of a branch. A branch and its subsequent merge marking the end of the 
+branch appear in the diagram as hollow diamonds. 
+Object Oriented System Design          
+Page: 23/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 24/69  
+    
+A transition may fork into two or more parallel activities. The fork and the subsequent join of the threads 
+coming out of the fork appear in the diagram as solid bars. 
+2.10 DESIGN OF OBJECT – ORIENTED METHOD 
+ The approach for object-oriented methodology is called object Modeling Technique (OMT).   
+ The object-oriented methodology consists of building a model of an application domain and then 
+adding implementation details to it during the design of the system.  
+ There are four different stages for applying OMT model: 
+ Analysis,  
+ System design,  
+ Object Design,  
+ Implementation 
+ 
+Analysis 
+ The analyst first reads the statement of the problem and then builds a model of the real world situation 
+showing its important properties.   
+ Problem statements are generally not complete or correct.  
+ Hence the analyst must sit with the user and try to understand the problem. 
+ The analysis model describes 
+ What the desired system must do 
+ How it will be done 
+ It is important to note the following points about the analysis model 
+ It should not contain any implementation decisions such as data structures.  
+ A good model should be simple and be understood by everybody including non-programmers. 
+ 
+System design 
+ The system designer makes high-level decisions about the overall architecture. 
+ During the system design, the target system is divided into a number of subsystems. 
+ The following are the decisions that have to be made by the system designer 
+ Organize the system into sub systems 
+ Allocate subsystems to processes and tasks 
+ Choose an approach for the management of data stores 
+ Handle access to global resources 
+ Choose the implementation of control in software 
+ Handle boundary conditions. 
+ 
+Object Design 
+ The object designer builds a design model based on the analysis model but containing the 
+implementation details.  
+ The designer adds details to the design model in accordance with the analysis model. 
+ The focus in the design model is the data structures and algorithms designed to implement each 
+class. 
+ 
+Implementation 
+ During the implementation stage, the object classes and relationships are finally translated into a 
+particular programming language, database or hardware implementation. 
+ The target language to be used determines the design decisions to some extent, but the design 
+should not depend on the fine details of the programming language. 
+ During implementation, it is necessary to follow good software engineering procedures so that the 
+system remains flexible and extensible. 
+ 
+ 
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+2.11 MODELS USED IN OBJECT MODELING TECHNIQUE 
+The OMT methodology uses three types of models to describe a system: 
+The object Model:  
+ It describes the static structure of the objects in a system that change over time.  
+ This model contains object diagrams.  
+ An object diagram is a graph whose nodes are object classes and whose arcs are relationships 
+among classes. 
+The dynamic model 
+ It describes all aspects of a system that change over time.   
+ The dynamic model is used to specify and implement the control aspects of a system.  
+ The dynamic model contains state diagrams.  
+ The state diagram is a graph whose nodes are states and whose arcs are transitions between states 
+caused by events. 
+The functional model 
+ It describes the data value transformations within the system.  
+ The functional model contains data flow diagrams.  
+ A data flow diagram represents a computation.  
+ A data flow diagram is a graph whose nodes are processes and whose arcs are data flows. 
+2.12 Introduction to Modeling 
+Systems analysts and designers produce models of systems. A business analyst will start by producing a 
+model of how an organization works. A system analyst will produce a more abstract model of the objects 
+in that business and how they interact with one another; a designer will produce a model of how a new 
+computerized system will work within the organization. In any development project that aims at 
+producing useful artifacts, the main focus of both analysis and design activities is on models. 
+2.12.1 Modeling 
+Modeling is a proven and well accepted engineering approach. Engineers build architectural models of 
+houses and high rises to help their users, visualize the final product. In software engineering, through 
+modeling following aims were achieved. 
+1. Model helps the users to visualize a system as it is or as it wants to be 
+2. Models permits to specify the structure or behavior of a system 
+3. Models gives a template that guides in the construction of the system 
+4. Models helps to document the decisions made 
+In software, there are several ways to approach a model. Two most common ways are from an 
+algorithmic perspective and from an object-oriented perspective. In the second approach, the main 
+building of the software system is object or class. Simply put an object is a thing, generally drawn from 
+the vocabulary of the problem domain or solution domain. A class is a description of a set of common 
+objects. Every object has identity, state and behavior of its own. 
+The heart of object-oriented problem solving is the construction of a model. The model abstracts the 
+essential details of the underlying problem from its usually complicated real world. Several modeling 
+tools are wrapped under the heading of the UML and one example was furnished below.  
+2.12.2 Usefulness of model 
+The models are useful in several different ways as follows: 
+ A model is quicker and easier to build 
+ A model can be used in simulations, to learn more about the thing it represents. 
+ A model can evolve as we learn more about a task or problem. 
+ A model can represent real or imaginary things form any domain. 
+Object Oriented System Design          
+Page: 25/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 26/69  
+    
+2.12.3 Diagram 
+ 
+Analysts and designer use diagrams to build models of system in the same way as architects use drawings 
+and diagrams to model buildings. 
+ Communicate ideas 
+ Generate new ideas and possibilities 
+ Test ideas and make predications 
+ Understand structures and relationships 
+ 
+In the unified Modeling Language specification it is important to follow the rules about diagrams. 
+ 
+Standards for diagrams are important as they promote communication in the same way as a common 
+language. 
+ 
+UML diagrams are made up of four elements 
+ Icons 
+ Two-dimensional symbols 
+ Paths 
+ Strings 
+ 
+ UML diagrams are graphs – composed of various kinds of shapes known as nodes, joined together by 
+lines, known as paths  
+ Two dimensional symbols that represent activities, linked by arrows that represent the transition from 
+one activity to another and the flow of control through the process that is being modeled.  
+ The start and finish of each activity graph is marked by special symbols – icons – the dot for the 
+initial state and the dot in a circle for the final state. The activities are labeled with strings, and strings 
+are also used at the decision points (i.e. diamond shapes) to show the conditions that are being tested.  
+ 
+2.12.4 Models in UML 
+ 
+ In UML there are a number of concepts that are used to describe systems and the ways in which they 
+can be broken down and modeled.  
+ A system is the overall thing that is being modeled. 
+ A sub-system is a part of a system, consisting of related elements of the system. 
+ A model is an abstraction of a system or sub-system form particular perspective or view.   
+ A diagram is a graphical representation of a set of elements in the model of the system.  
+ UML provides a notation for modeling sub-systems and models that uses an extension of the notation 
+for packages in UML. 
+ Packages are a way of organizing model elements and grouping them together. 
+ 
+ 
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+UNIT-3 
+DIAGRAMS 
+3.1 Sequence diagrams 
+A sequence diagram is an interaction diagram that details how operations are carried out -- what messages 
+are sent and when. Sequence diagrams are organized according to time. The time progresses as you go 
+down the page. The objects involved in the operation are listed from left to right according to when they 
+take part in the message sequence. 
+Below is a sequence diagram for making a hotel reservation. The object initiating the sequence of 
+messages is a Reservation window. 
+Figure: Sequence Diagram-1 
+The Reservation window sends a makeReservation () message to a HotelChain. The HotelChain then 
+sends a makeReservation () message to a Hotel. If the Hotel has available rooms, then it makes a 
+Reservation and a Confirmation. 
+Within a sequence diagram, on object is available in the box at the top of a dotted vertical line. Each 
+vertical dotted line is a lifeline, representing the time that an object exists. Each arrow is a message call. 
+An arrow goes from the sender to the top of the activation bar of the message on the receiver's lifeline. 
+The activation bar represents the duration of execution of the message. Each message is labeled at 
+minimum with the message name. 
+In our diagram, the Hotel issues a self-call to determine if a room is available. If so, then the Hotel creates 
+a Reservation and a Confirmation. The asterisk on the self-call means iteration (to make sure there is 
+available room for each day of the stay in the hotel). The expression in square brackets, [ ], is a condition. 
+The diagram has a clarifying note, which is text inside a dog-eared rectangle. Notes can be put into any 
+kind of UML diagram. 
+Object Oriented System Design          
+Page: 27/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 28/69  
+    
+Another Example 
+ 
+Figure: Sequence Diagram-2 
+Guide lines for Drawing Sequence Diagrams  
+1. An actor that initiates the interaction is often shown on the left.  
+2. The vertical dimension represents time.  
+3. A vertical line, called a lifeline, is attached to each object or actor.  
+4. The lifeline becomes a broad box, called an activation box during the live activation period.  
+5. A message is represented as an arrow between activation boxes of the sender and receiver.  
+ 
+ 
+3.2 Collaboration diagrams 
+ 
+Collaboration Diagrams describe interactions among classes and associations. These interactions are 
+modeled as exchanges of messages between classes through their associations. Collaboration diagrams 
+are a type of interaction diagram. Collaboration diagrams contain the following elements:  
+• Class roles, which represent roles that objects may play within the interaction.  
+• Association roles, which represent roles that links may play within the interaction.  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+• Message flows, which represent messages sent between objects via links. Links transport or implement 
+the delivery of the message.  
+3.3 State chart diagrams 
+Objects have behaviours and state. The state of an object depends on its current activity or condition. A 
+state chart diagram shows the possible states of the object and the transitions that cause a change in state. 
+UML state machine diagrams depict the various states that an object may be in and the transitions 
+between those states. In fact, in other modeling languages, it is common for this type of a diagram to be 
+called a state-transition diagram or even simply a state diagram. A state represents a stage in the behavior 
+pattern of an object, and like UML activity diagrams it is possible to have initial states and final states. 
+An initial state, also called a creation state, is the one that an object is in when it is first created, whereas a 
+final state is one in which no transitions lead out of. A transition is a progression from one state to another 
+and will be triggered by an event that is either internal or external to the object. 
+Top-level state machine diagram is shown below for seminar enrolment, teaching and final exams for a 
+specific subject. The arrows represent transitions, progressions from one state to another. 
+Figure: State Chart Diagram-1 
+Following figure presents sub-states of enrollment state during seminar class registration.  
+Figure: State Chart Diagram-2 
+3.4 Realizing Use Cases in Sequence Diagrams 
+• Realizing use cases by means of sequence diagrams is an important part of our analysis. 
+• It ensures that we have an accurate and complete class diagram. 
+Object Oriented System Design          
+Page: 29/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 30/69  
+    
+• The sequence diagrams increase the completeness and understandability of our analysis model. 
+• The behavior is associated with the class the first time it is required, and then the behavior is reused 
+for every other use case that requires the behavior.  
+• When assigning behaviours or responsibilities to a class while mapping a use case to the analysis 
+model, you must take special care to assign the responsibility to the correct class. 
+• The responsibility or behavior belongs to the class if it is something you would do to the thing the 
+class represents.  
+ 
+Example 
+• Suppose you were asked to read the first paragraph of three chapters of book. First, you would 
+need to know where to go to get the book. We might state that all books we are referring to are 
+available at the Fourth St. library. You might then know to first go to the library, but the library 
+has thousands of books. You might next have to consult the card catalog to determine where the 
+book is located and then retrieve the book. Next, you might look at the book’s table of contents to 
+determine which pages concern you and then turn to those pages. We could consider the library as 
+the whole and the books as the part of the whole-part relationship. The relationship between the 
+book and the pages could also be viewed as a whole-part relationship. When we determined where 
+to look and then proceeded to find that point, we were navigating the whole-part relationship.  
+• Every time you find yourself navigating the whole-part relationship to find the appropriate class, 
+you will need to assign responsibilities to the classes you are navigating to ensure that you can, in 
+fact, find the appropriate class.  
+• Said another way, the navigating behavior must be a method on the class representing the whole.  
+• It is not unusual that this requires returning to the class that represents the system itself.  
+                 
+Figure: class diagram and sequence diagram for the class diagram 
+• Suppose the system receives a message from an actor requesting that you delete a given order 
+belonging to a given customer. 
+•  The sequence diagram might look like as shown previously.  
+• The sequence diagram requires the system to navigate the whole-part relationships to delete the 
+order specified by the object of type ACTOR.  
+• The sequence of events begins when the object of type ACTOR requests that a specific order be 
+deleted for a specific customer.  
+• There is no way for the object of type ACTOR to call the delete method on the object of the type 
+ORDER because the object of type ACTOR does not have a reference to the specific order.  
+• It is appropriate for the object of type ACTOR to have a reference to the object of type 
+POINTOFSALE.  
+• This follows because there is only one object of type POINTOFSALE and it can, therefore, be 
+referenced by name.  
+• The logical starting point for all interaction with the actor is the object of type POINTOFSALE. 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+• The objects of type ACTOR can then traverse the whole-part relationships to arrive at the specific 
+object of type ORDER for which the action is intended.  
+• The responsibilities for navigating the whole-part relationship result in assigning behaviors to the 
+object of type POINTOFSALE and the object of type CUSTOMER.  
+3.5 Logical Architecture and UML Package Diagrams 
+3.5.1 Logical Architecture and Layers 
+• Logical architecture: the large-scale organization of software classes into packages, subsystems, and 
+layers. – “Logical” because no decisions about deployment are implied. (See Chap. 37.) 
+• Layer: a very coarse-grained grouping of classes, packages, or subsystems that has cohesive 
+responsibility for a major aspect of the system. 
+3.5.2 Layered Architectures 
+• Typical layers in an OO system: – User Interface – Application Logic and Domain Objects – Technical Services 
+• Application-independent, reusable across systems. 
+• Relationships between layers: – Strict layered architecture: a layer only calls upon services of the layer directly below it. – Relaxed layered architecture: a higher layer calls upon several lower layers. 
+Figure: Layers shown with UML package diagrams 
+Figure: Various UML notations for packages nesting  
+Object Oriented System Design          
+Page: 31/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 32/69  
+    
+3.5.3 Design with Layers 
+• Organize the large-scale logical structure of a system into discrete layers of distinct, related 
+responsibilities. – Cohesive separation of concerns. – Lower layers are general services. – Higher layers are more application-specific. 
+• Collaboration and coupling is from higher to lower layers. – Lower-to-higher layer coupling is avoided. 
+ 
+ 
+Figure: Common layers in an IS logical architecture 
+ 
+3.5.4 Benefits of a Layered Architecture 
+• Separation of concerns: 
+ E.g., UI objects should not do application logic (a window object should not   calculate taxes) nor 
+should a domain layer object create windows or capture mouse events. – Reduced coupling and dependencies. – Improved cohesion. – Increased potential for reuse. – Increased clarity. – Related complexity is encapsulated and decomposable. – Some layers can be replaced with new implementations. – Lower layers contain reusable functions. – Some layers can be distributed. – Especially Domain and Technical Services. – Development by teams is aided by logical segmentation. 
+ 
+Designing the Domain Layer 
+How do we design the application logic with objects? 
+• Create software objects with names and information similar to the real-world domain. 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+• Assign application logic responsibilities to these domain objects. – E.g., a Sale object is able to calculate its total. 
+The application logic layer is more accurately called a domain layer when designed this way.  
+Figure: Domain Model Related to Domain Layer 
+Figure: Layers vs. Partitions 
+Figure: Don’t mix logical and deployment views 
+Object Oriented System Design          
+Page: 33/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 34/69  
+    
+3.5.5 The Model-View Separation Principle 
+• Model: the domain layer of objects. 
+• View: user interface (UI) objects. 
+• Model objects should not have direct knowledge of view objects. – Do not connect or couple non-UI objects directly to UI objects. 
+• E.g., don’t let a Sale object have a reference to a Java Swing JFrame window 
+object. – Do not put application logic in a UI object. 
+• UI objects should receive UI events and delegate requests for application logic to 
+non-UI objects. 
+ 
+Figure: Messages from UI layer to domain layer 
+3.5.6 The Observer Pattern 
+ 
+• If model (domain) objects do not have direct knowledge of view (UI) objects, how can a Register 
+or Sale object get a window to refresh its display when a total change? 
+• The Observer pattern (p. 463) allows domain objects to send messages to UI objects viewed only 
+in terms of an interface. – E.g., known not as concrete window class, but as implementation of PropertyListener 
+interface. 
+• Allows replacement of one view by another. 
+ 
+3.6 Component Diagram  
+ 
+A component diagram shows the dependencies among software components, including source code 
+components, binary code components, and executable components. A software module may be 
+represented as a component type. Some components exist at compile time, some exist at link time, some 
+exist at run time, and some exist at more than one time. A compile-only component is one that is only 
+meaningful at compile time. The run-time component in this case would be an executable program. A 
+component diagram has only a type form, not an instance form. To show component instances, use a 
+deployment diagram (possibly a degenerate one without nodes). 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+3.7 Deployment Diagram  
+Deployment diagrams show the configuration of run-time processing elements and the software 
+components, processes, and objects that live on them. Software component instances represent run-time 
+manifestations of code units. Components that do not exist as run-time entities (because they have been 
+compiled away) do not appear on these diagrams, they should be shown on component diagrams. 
+3.8 Collaboration diagram  
+Collaboration Diagrams describe interactions among classes and associations. These interactions are 
+modelled as exchanges of messages between classes through their associations. Collaboration diagrams 
+are a type of interaction diagram. Collaboration diagrams contain the following elements:  
+• Class roles, which represent roles that objects may play within the interaction.  
+• Association roles, which represent roles that links may play within the interaction.  
+• Message flows, which represent messages sent between objects via links. Links transport or implement 
+the delivery of the message. 
+3.9 Design Patterns  
+3.9.1 Reusing object-oriented design  
+Software designers are in a similar position to architects and civil engineers, particularly those concerned 
+with the design of large heterogeneous constructions, such as towns and industrial plants. It therefore 
+seems natural that we should turn to these subjects for ideas about how to attack the design problem.  
+Subsystems created by the composition of objects do not conform to any accepted notion of structure and 
+are very hard to characterize, though they do determine subsystems that exhibit reusable regularities of 
+interface behavior. The term pattern is used to denote reusable regularities of behavior exhibited by 
+interactive subsystems created by the composition of interaction.  
+3.9.2 What is a design pattern?  
+Object Oriented System Design          
+Page: 35/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 36/69  
+    
+ 
+They originate from the work of Christopher Alexander, a building architect in the 1970‟s. Alexander‟s 
+idea was to improve the quality of the buildings of the time by utilising proven „patterns‟ of good 
+architectural design. „Each pattern describes a problem which occurs over and over again in our 
+environment, and then describes the core of the solution to that problem.‟  
+A design pattern is defined as „a description of communicating objects and classes that are customized to 
+solve a general design problem in a particular context‟.  
+ 
+ Patterns capture good design principles and communicate them to others.  
+ Design patterns represent the first legitimate attempt at design reusability.  
+ 
+3.9.3 Design Patterns: Essentials  
+ Patterns are found through trial and error and by observation.  
+ In general, a design pattern has four essential elements:  
+o The pattern name.  
+o The problem the pattern is used to solve. 
+o The solution or template for implementing the pattern. 
+o The consequences or results of applying the pattern. 
+ 
+3.9.4 Design Patterns: Characteristics  
+Smart  
+ Design patterns are elegant solutions that would not necessarily be apparent to designer without 
+significant experience. 
+Generic  
+ Patterns are normally generic for a specific problem (a bit like generic containers).  
+ Design patterns are not normally dependent on a specific system type, programming language, or 
+application domain.  
+Well-proven  
+ Design patterns have been identified from real, object-oriented systems. They have not just been 
+thought up, they have been successfully used and tested in several systems.  
+Simple  
+ Design patterns usually only consist of a small number of classes, so they are quite small. Combining 
+patterns allows the building of more complex systems.  
+Reusable  
+ Patterns are well-documented so they are easy to reuse. They are generic so they can be used in a 
+variety of different types of system. It is worth noting that the reuse is at the design level, not at the 
+code level; the classes are not in libraries.  
+Object Oriented  
+ Design patterns conform to the usual object-oriented concepts of classes, objects, inheritance and 
+polymorphism.  
+3.9.5 Types of Design Patterns  
+Creational Patterns: - All of the creational patterns deal with the best way to create instances of classes. 
+Creational patterns separate the operation of an application from how its objects are created. This is 
+important because your program should not depend on how objects are created and arranged. In Java, of 
+course, the simplest way to create an instance of an object is by using the new operator.  
+Fred = new Fred(); //instance of Fred class  
+However, this really amounts to hard coding how you create the object within your program. In many 
+cases, the exact nature of the object that is created could vary with the needs of the program from time to 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+time and abstracting the creation process into a special "creator" class can make your program more flexible 
+and general.  
+Creational patterns abstract the object instantiation process. They hide how objects are created and help 
+make the overall system independent of how its objects are created and composed. l Class creational 
+patterns focus on the use of inheritance to decide the object to be instantiated Patterns become important 
+as systems evolve to depend more on object composition than class inheritance. Thus creating objects 
+with particular behaviors requires more than simply instantiating a class.  
+As an example we consider the creational pattern, Singleton, which can be used to ensure that only one 
+instance of a class is created. Singleton pattern offers several advantages but also has disadvantages  
+Advantages  
+It provides controlled access to the sole object instance as the singleton encapsulates the instance.  
+The namespace is not unnecessarily extended with global variables.  
+The singleton class may be sub classed. At system start up user selected options may determine which of 
+the subclasses instantiated is when the singleton class is first accessed.  
+A variation of this pattern can be used to create a specified number of instances if required.  
+Disadvantages  
+Using the pattern introduces some additional message passing. To access the singleton instance, the class 
+scope operation getInstance() has to be accessed first rather than accessing the instance directly.  
+The pattern limits the flexibility of the application.  
+The singleton pattern is quite well known and developers are tempted to use it in circumstances that are 
+inappropriate. Patterns must be used with care.  
+Structural Patterns: Structural patterns describe how classes and objects can be combined to form larger 
+structures. Structural patterns offer effective ways of using object oriented concepts such as inheritance, 
+aggregation and composition to satisfy particular requirements. The difference between class patterns and 
+object patterns is that class patterns describe how inheritance can be used to provide more useful program 
+interfaces. Object patterns, on the other hand, describe how objects can be composed into larger structures 
+using object composition, or the inclusion of objects within other objects. 
+As an example we consider the structural pattern, composite pattern  
+Behavioural Patterns: Behavioral patterns are those patterns that are most specifically concerned with 
+communication between objects. This pattern addresses the problems that arise when responsibilities are 
+assigned to classes and in designing algorithms. Behavioural patterns not only suggest particular static 
+relationships between objects and classes but also describe how the objects communicate. Behavioural 
+patterns may use inheritance structures to spread behaviour across the subclasses or they may use 
+aggregation and composition to build complex behaviour from simpler components. The state pattern 
+uses both of these techniques 
+Object Oriented System Design          
+Page: 37/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 38/69  
+    
+Unit-4 
+Object Oriented System Design 
+4.1 Design Issues 
+ UML as a Model Can’t Work in Isolation 
+ Large Scale System Design/Development Involves 
+ Team-Oriented Efforts 
+ Software Architectural Design 
+ System Design, Implementation, Integration 
+ The  Unified Process by Rational is 
+ Iterative and Incremental 
+ Use Case Driven 
+ Architecture-Centric 
+ 
+4.2 Unified Modeling Language 
+ 
+  
+ 
+4.3 History of the UML 
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+Figure: A plotted history of the UML 
+Figure: Influences on the UML 
+Object Oriented System Design          
+Page: 39/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 40/69  
+    
+ 
+ 
+4.4 The Unified Approach to Design 
+ 
+ 
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+Object Oriented System Design          
+Page: 41/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 42/69  
+    
+ 
+ 
+ 
+ 
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+4.5 Life Cycle Phase of Unified Process 
+Object Oriented System Design          
+Page: 43/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 44/69  
+    
+ 
+4.6 Applying the Unified Process 
+ 
+ 
+ 
+ 
+4.7 Analysis model Partitioning for the design 
+ 
+Software design deals with transforming the customer requirements, as described in the SRS document, 
+into a form (a set of documents) that is suitable for implementation in a programming language. A good 
+software design is seldom arrived by using a single step procedure but rather through several iterations 
+through a series of steps. Design activities can be broadly classified into two important parts: Preliminary 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+(high-level) design and detailed design. The meaning and scope of two design activities (i.e. high level 
+and detailed design) tend to vary considerably from one methodology to another. High-level design 
+means identification of different modules and the control relationships among them and the definition of 
+the interfaces among these modules. The outcome of high-level design is called the program structure or 
+software architecture. Many different types of notations have been used to represent a high-level design. 
+A popular way is to use a tree-like diagram called the structure chart to represent the control hierarchy in 
+a high-level design. However, other notations such as Jackson diagram or 
+Figure: Analysis and design view 
+Warnier-Orr diagram can also be used. During detailed design, the data structure and the algorithms of 
+the different modules are designed. 
+Figure: dimensions of analysis and design 
+The analysis model is refined and formalized to get a design model. During design modeling, we try to 
+adapt to the actual implementation environment. In design space, yet another new dimension has been 
+added to the analysis space to include the implementation environment. This is show in figure above. This 
+means that we want to adopt our analysis model to fit in the implementation model at the same time as we 
+refine it.  
+Figure: Component of analysis model and its mapping to the design model. 
+Map the information from the analysis model to the design representations - data design, architectural 
+design, interface design, procedural design. 
+A. The design process should not suffer from tunnel vision 
+A good designer should consider alternative approaches, judging each based on the requirements of the 
+problem, the resources available to do the job. 
+B. The design should be traceable to the analysis model 
+Object Oriented System Design          
+Page: 45/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 46/69  
+    
+Because a single element of the design model often traces to multiple requirements, it is necessary to have 
+a means for tracking how requirements have been satisfied by the design model. 
+C. The design should minimize the intellectual distance between the software and the problem as it exists 
+in the real world. 
+That is, the structure of the software design should (whenever possible) mimic the structure of the 
+problem domain. 
+D. The design should exhibit uniformity and integration 
+A design is uniform if it appears that one person developed the entire thing. Rules of style and format 
+should be defined for a design team before design work begins. A design is integrated if care is taken in 
+defining interfaces between design components. 
+E. Design is not coding, coding is not design 
+Even when detailed procedural designs are created for program components, the level of abstraction of 
+the design model is higher than source code. The only design decisions made at the coding level address 
+the small implementation details that enable the procedural design to be coded. 
+F. The design should be assessed for quality  
+A variety of design concepts and design measures are available to assist the designer in assessing quality. 
+G. The design should be reviewed to minimize conceptual errors 
+There is sometimes a tendency to focus on minutiae when the design is reviewed, missing the forest for 
+the trees. A design team should ensure that major conceptual elements of the design (omissions, 
+ambiguity, and inconsistency) have been addressed before worrying about the syntax of the design model. 
+In the construction process, we construct the system using both the analysis model and requirements 
+model. We design and implement the system. Firstly, a design model is made where each object will be 
+fully specified. This model will then form an input data for the rest process. 
+H. When to do this transition? 
+The transition from the analysis model to the design model should be made when the Consequences of 
+the implementation environment start to show. This is with adaptation of DBMS distributed environment, 
+real-time adaptations etc. then it is fine to be quite formal in the analysis model. 
+But if these circumstances will strongly affect the system structure, then the transition should be made 
+quite early. The goal is not to redo any work in a later phase that has done in an earlier phase. We try to 
+keep an ideal analysis model of a system during the entire system life cycle. 
+A design model is a Specialization of the analysis model for a specific implementation environment [1]. 
+Such changes are then easily incorporated because it is the same analysis model that will form should not 
+affect the analysis model as we do not want changes due to design decisions to be illustrated in the 
+analysis model. 
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+I. When Changes should be made? 
+If a change of the design model comes from a logical change in the system, then such changes should also 
+be made in the analysis model. 
+We use a concept of block now to describe the intention of how the code should be produced. The blocks 
+are the design objects. One block normally tries to implement should not affect the analysis model as we 
+do not want changes due to design decisions to be illustrated in the analysis model. 
+4.8 Object diagrams 
+Object diagrams show instances instead of classes. They are useful for explaining small pieces with 
+complicated relationships, especially recursive relationships. 
+This small class diagram shows that a University Department can contain lots of other Departments. 
+The object diagram below instantiates the class diagram, replacing it by a concrete example. 
+Each rectangle in the object diagram corresponds to a single instance. Instance names are underlined in 
+UML diagrams. Class or instance names may be omitted from object diagrams as long as the diagram 
+meaning is still clear. 
+A class contains a class name, properties and functions. An object shows the class name it is instantiated 
+from preceded by a colon (:), then optionally preceded by the object name. The class in a class diagram 
+displays properties and functions, whereas the object in an object diagram shows only properties, along 
+with their values at the moment of interest to the modeller or viewer. It uses the similar notation as the 
+class diagram. Although less important from a system documentation point of view, object diagrams are 
+handy for documenting a current state of a system. This would include the current values of all 
+documented attributes as shown in the figure 
+4.9 State chart diagrams 
+Objects have behaviours and state. The state of an object depends on its current activity or condition. A 
+state chart diagram shows the possible states of the object and the transitions that cause a change in state. 
+UML state machine diagrams depict the various states that an object may be in and the transitions 
+between those states. In fact, in other modeling languages, it is common for this type of a diagram to be 
+Object Oriented System Design          
+Page: 47/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 48/69  
+    
+called a state-transition diagram or even simply a state diagram. A state represents a stage in the behavior 
+pattern of an object, and like UML activity diagrams it is possible to have initial states and final states. 
+An initial state, also called a creation state, is the one that an object is in when it is first created, whereas a 
+final state is one in which no transitions lead out of. A transition is a progression from one state to another 
+and will be triggered by an event that is either internal or external to the object. 
+ 
+Top-level state machine diagram is shown below for seminar enrolment, teaching and final exams for a 
+specific subject. The arrows represent transitions, progressions from one state to another. 
+ 
+Figure 3.7: State Chart Diagram-1 
+ 
+Following figure presents sub-states of enrolment state during seminar class registration.  
+ 
+Figure 3.8: State Chart Diagram-2 
+ 
+4.10 Introduction to Modeling  
+ 
+If you are building a new addition to your house, you probably won‟t start by just buying a bunch of 
+wood and nailing it together until it looks about right. You will want some blue prints to follow so you 
+can plan and structure the addition before you start working. Models do the same thing for us in the 
+software world. They are the blue prints for systems. A blue print helps you plan an addition before you 
+build it. It can help you be sure the design is sound, the requirements have been met and system can 
+withstand even requirement changes.  
+ 
+4.10.1 Principles of Modeling  
+ A model is a simplification of reality.  
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+If you want to build a house for your family, you can start with a pile of lumber, some nails, and a few 
+basic tools, but it's going to take you a lot longer, and your family will certainly be more demanding than 
+the dog. In this case, unless you've already done it a few dozen times before, you'll be better served by 
+doing some detailed planning before you pound the first nail or lay the foundation. At the very least, 
+you'll want to make some sketches of how you want the house to look. If you want to build a quality 
+house that meets the needs of your family and of local building codes, you'll need to draw some 
+blueprints as well, so that you can think through the intended use of the rooms and the practical details of 
+lighting, heating, and plumbing. Given these plans,  
+If you are building a high rise, sometimes you need a 30,000-foot view--for instance, to help your 
+investors visualize its look and feel. Other times, you need to get down to the level of the studs--for 
+instance, when there's a tricky pipe run or an unusual structural element.  
+The same is true with software models. Sometimes, a quick and simple executable model of the user 
+interface is exactly what you need; at other times, you have to get down and dirty with the bits, such as 
+when you are specifying cross-system interfaces or wrestling with networking bottlenecks. In any case, 
+the best kinds of models are those that let you choose your degree of detail, depending on who is doing 
+the viewing and why they need to view it. An analyst or an end user will want to focus on issues of what; 
+a developer will want to focus on issues of how. Both of these stakeholders will want to visualize a 
+system at different levels of detail at different times.  
+ The best models are connected to reality.  
+A physical model of a building that doesn't respond in the same way as do real materials has only limited 
+value; a mathematical model of an aircraft that assumes only ideal conditions and perfect manufacturing 
+can mask some potentially fatal characteristics of the real aircraft. It's best to have models that have a 
+clear connection to reality, and where that connection is weak, to know exactly how those models are 
+divorced from the real world. All models simplify reality; the trick is to be sure that your simplifications 
+don't mask any important details.  
+ No single model is sufficient. Every nontrivial system is best approached through a small set of 
+nearly independent models.  
+If you are constructing a building, there is no single set of blueprints that reveal all its details. At the very 
+least, you'll need floor plans, elevations, electrical plans, heating plans, and plumbing plans.  
+The operative phrase here is "nearly independent." In this context, it means having models that can be 
+built and studied separately but that are still interrelated. As in the case of a building, you can study 
+electrical plans in isolation, but you can also see their mapping to the floor plan and perhaps even their 
+interaction with the routing of pipes in the plumbing plan.  
+4.10.2 Different views of a system  
+A model is a semantically closed abstraction of a system, meaning that it represents a complete and self
+consistent simplification of reality, created to better understand the system.  
+Architecture is the set of significant decisions about  
+ The organization of a software system  
+ The selection of the structural elements and their interfaces by which the system is composed  
+ Their behavior, as specified in the collaborations among those elements  
+ The composition of these structural and behavioural elements into progressively larger subsystems  
+ The architectural style that guides this organization: the static and dynamic elements and their 
+interfaces, their collaborations, and their composition  
+The architecture of a software-intensive system can best be described by five interlocking views. Each 
+view is a projection into the organization and structure of the system, focused on a particular aspect of 
+that system 
+Object Oriented System Design          
+Page: 49/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 50/69  
+    
+ 
+The use case view of a system encompasses the use cases that describe the behavior of the system as seen 
+by its end users, analysts, and testers. This view doesn't really specify the organization of a software 
+system. Rather, it exists to specify the forces that shape the system's architecture. With the UML, the 
+static aspects of this view are captured in use case diagrams; the dynamic aspects of this view are 
+captured in interaction diagrams, statechart diagrams, and activity diagrams.  
+ 
+The design view of a system encompasses the classes, interfaces, and collaborations that form the 
+vocabulary of the problem and its solution. This view primarily supports the functional requirements of 
+the system, meaning the services that the system should provide to its end users. With the UML, the static 
+aspects of this view are captured in class diagrams and object diagrams; the dynamic aspects of this view 
+are captured in interaction diagrams, statechart diagrams, and activity diagrams.  
+ 
+The process view of a system encompasses the threads and processes that form the system's concurrency 
+and synchronization mechanisms. This view primarily addresses the performance, scalability, and 
+throughput of the system. With the UML, the static and dynamic aspects of this view are captured in the 
+same kinds of diagrams as for the design view, but with a focus on the active classes that represent these 
+threads and processes.  
+The implementation view of a system encompasses the components and files that are used to assemble 
+and release the physical system. This view primarily addresses the configuration management of the 
+system's releases, made up of somewhat independent components and files that can be assembled in 
+various ways to produce a running system. With the UML, the static aspects of this view are captured in 
+component diagrams; the dynamic aspects of this view are captured in interaction diagrams, state chart 
+diagrams, and activity diagrams.  
+ 
+The deployment view of a system encompasses the nodes that form the system's hardware topology on 
+which the system executes. This view primarily addresses the distribution, delivery, and installation of the 
+parts that make up the physical system. With the UML, the static aspects of this view are captured in 
+deployment diagrams; the dynamic aspects of this view are captured in interaction diagrams, statechart 
+diagrams, and activity diagrams.  
+Inheritance model: Inheritance model was best described with class diagram and it can be modeled by 
+making use of generalization relationship among classes in class diagram. This model is comprised of 
+super class as well as sub classes. This will support the idea of re-usability.  
+ 
+4.11 Use Case Modeling  
+ 
+The Use Case model is about describing WHAT our system will do at a high-level and with a user focus 
+for the purpose of scoping the project and giving the application some structure. The Use Cases are the 
+unit of estimation and also the smallest unit of delivery. Each increment that is planned and delivered is 
+described in terms of the Use Cases that will be delivered in that increment.  
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+Use Cases are not a functional decomposition model. Use Cases are not intended to capture all of the 
+system requirements. Use Cases do not capture HOW the system will do anything - nor do they capture 
+anything the actor does that does not involve the system. 
+Use Cases are not an inherently object-oriented modeling technique. There is no fundamental reason why 
+they couldn't be used as the front-end to a structured development method - but they're not because the 
+methods gurus are concentrating on the development of OO methods.  
+4.12 Design Model  
+Relationships between classes  
+Now that we can produce class diagrams we can look at how classes can be related to each other.  
+When we are drawing class diagrams to give an overview of the relationships between classes we may 
+omit the attributes and methods for simplicity sake. You will see that this is the way that the diagrams 
+have been drawn below. The detail of the attributes and methods can be added later.  
+There are three relationships possible:  
+ association  
+ aggregation  
+ generalization (or inheritance)  
+Association  
+This is the loosest relationship. It simply means that there will be some communication between the 
+classes but nothing special. This will mean more to you when we have looked at the other two types of 
+relationship.  
+An example would be Student to Module 
+Aggregation 
+This means that one class is „part of‟ another class.  
+This is tighter than an association, in other words the classes are more closely related. To determine 
+whether the relationship is an aggregation it is useful to ask yourself if one class is part of another class. If 
+you can answer „yes‟ then it probably is an aggregation.  
+An example would be Course to Module 
+The way that I test to make sure that this is correct is to ask myself  
+ can I say „module is a part of course‟  
+ is it essential for course to exist before module can exist  
+If I can answer yes to both (or at least yes to the first) then I am fairly satisfied.  
+In this example module is definitely a part of a course. If there was no course then it would be possible to 
+have a module but it could never be offered and would never have any students, so module is dependent 
+on course and so is a part of it.  
+Generalization (Generalization/Specialization)  
+The third relationship is inheritance. This is extremely important to object oriented systems and is a very 
+powerful feature. The rule that applies here is to ask whether one class is „a kind of‟another class.  
+Super Classes  
+The real power and impact of inheritance becomes clearer when we start to add attributes and methods. 
+Let us first add some attributes and methods to the class BUILDING. 
+Object Oriented System Design          
+Page: 51/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 52/69  
+    
+ 
+There are clearly lot more attributes and methods that we could add to the class BUILDING, but we must 
+remember that they must apply to all BUILDINGs.  
+What is really important is that HOUSE now inherits all the generalized attributes and methods from 
+BUILDING, and then we can add the specialized attributes that make it special.  
+ 
+Sub classes  
+A class will inherit all the attributes and methods from all its ancestors.  
+ 
+If you look at the structure of many of the object oriented languages you will see that there is a base class. 
+This is more clearly demonstrated by looking at an example.  
+ 
+Let us imagine all the people that one might find in a university; we will call them university members. 
+These may be students or members of staff and staff may be academic or administrative.  
+In outline this would look like this: 
+ 
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+Unit-5: GRASP and UML 
+5.1 GRASP (object-oriented design) 
+General Responsibility Assignment Software Patterns (or Principles), abbreviated GRASP, consists 
+of guidelines for assigning responsibility to classes and objects in object-oriented design. 
+The different patterns and principles used in GRASP are: Controller, Creator, Indirection, Information 
+Expert, High Cohesion, Low Coupling, Polymorphism, Protected Variations, and Pure Fabrication. All 
+these patterns answer some software problem, and in almost every case these problems are common to 
+almost every software development project. These techniques have not been invented to create new ways 
+of working, but to better document and standardize old, tried-and-tested programming principles in 
+object-oriented design. 
+Computer scientist Craig Larman states that "the critical design tool for software development is a mind 
+well educated in design principles. It is not the UML or any other technology." Thus, GRASP is really a 
+mental toolset, a learning aid to help in the design of object-oriented software. 
+5.2 Patterns 
+5.2.1 Controller 
+The Controller pattern assigns the responsibility of dealing with system events to a non-UI class that 
+represents the overall system or a use case scenario. A Controller object is a non-user interface object 
+responsible for receiving or handling a system event. 
+A use case controller should be used to deal with all system events of a use case, and may be used for 
+more than one use case (for instance, for use cases Create User and Delete User, one can have a 
+single UserController, instead of two separate use case controllers). 
+It is defined as the first object beyond the UI layer that receives and coordinates ("controls") a system 
+operation. The controller should delegate the work that needs to be done to other objects; it coordinates or 
+controls the activity. It should not do much work itself. The GRASP Controller can be thought of as being 
+a part of the Application/Service layer (assuming that the application has made an explicit distinction 
+between the application/service layer and the domain layer) in an object-oriented system with Common 
+layers in an information system logical architecture 
+5.2.2 Creator 
+Creation of objects is one of the most common activities in an object-oriented system. Which class is 
+responsible for creating objects is a fundamental property of the relationship between objects of particular 
+classes. 
+In general, a class B should be responsible for creating instances of class A if one, or preferably more, of 
+the following apply: 
+ Instances of B contain or compositely aggregate instances of A 
+ Instances of B record instances of A 
+ Instances of B closely use instances of A 
+ Instances of B have the initializing information for instances of A and pass it on creation. 
+5.2.3 High Cohesion 
+High Cohesion is an evaluative pattern that attempts to keep objects appropriately focused, manageable 
+and understandable. High cohesion is generally used in support of Low Coupling. High cohesion means 
+that the responsibilities of a given element are strongly related and highly focused. Breaking programs 
+into classes and subsystems is an example of activities that increase the cohesive properties of a system. 
+Alternatively, low cohesion is a situation in which a given element has too many unrelated 
+responsibilities. Elements with low cohesion often suffer from being hard to comprehend, hard to reuse, 
+hard to maintain and averse to change.  
+Object Oriented System Design          
+Page: 53/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 54/69  
+    
+5.2.4 Indirection 
+The Indirection pattern supports low coupling (and reuse potential) between two elements by assigning 
+the responsibility of mediation between them to an intermediate object. An example of this is the 
+introduction of a controller component for mediation between data (model) and its representation (view) 
+in the Model-view-controller pattern. 
+5.2.4 Information Expert 
+Information Expert (also Expert or the Expert Principle) is a principle used to determine where to 
+delegate responsibilities. These responsibilities include methods, computed fields, and so on. 
+Using the principle of Information Expert, a general approach to assigning responsibilities is to look at a 
+given responsibility, determine the information needed to fulfill it, and then determine where that 
+information is stored. 
+Information Expert will lead to placing the responsibility on the class with the most information required 
+to fulfill it.  
+5.2.5Low Coupling 
+Low Coupling is an evaluative pattern, which dictates how to assign responsibilities to support: 
+ lower dependency between the classes, 
+ change in one class having lower impact on other classes, 
+ Higher reuse potential. 
+5.2.6 Polymorphism 
+According to Polymorphism, responsibility of defining the variation of behaviors based on type is 
+assigned to the types for which this variation happens. This is achieved using polymorphic operations. 
+ 
+5.2.7 Protected Variations 
+The Protected Variations pattern protects elements from the variations on other elements (objects, 
+systems, subsystems) by wrapping the focus of instability with an interface and using polymorphism to 
+create various implementations of this interface. 
+5.2.8 Pure Fabrication 
+A Pure Fabrication is a class that does not represent a concept in the problem domain, specially made up 
+to achieve low coupling, high cohesion, and the reuse potential thereof derived (when a solution presented 
+by the Information Expert pattern does not). This kind of class is called "Service" in Domain-driven 
+design. 
+ 
+5.3 Factory (object-oriented programming) 
+In object-oriented programming, a factory is an object for creating other objects – formally a factory is 
+simply an object that returns an object from some method call, which is assumed to be "new". More 
+broadly, a subroutine that returns a "new" object may be referred to as a "factory", as in factory 
+method or factory function. This is a basic concept in OOP, and forms the basis for a number of 
+related software design patterns. 
+ 
+ 
+In class-based programming, a factory is an abstraction of a constructor of a class, while in prototype
+based programming a factory is an abstraction of a prototype object. A constructor is concrete in that it 
+creates objects as instances of a single class, and by a specified process (class instantiation), while a 
+factory can create objects by instantiating various classes, or by using other allocation schemes such as 
+an object pool. A prototype object is concrete in that it is used to create objects by being cloned, while a 
+factory can create objects by cloning various prototypes, or by other allocation schemes. 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+Factories may be invoked in various ways, most often a method call (a factory method), sometimes by 
+being called as a function if the factory is a function object (a factory function). In some languages 
+factories are generalizations of constructors, meaning constructors are themselves factories and these are 
+invoked in the same way. In other languages factories and constructors are invoked differently, for 
+example using the keyword new to invoke constructors but an ordinary method call to invoke factories; 
+in these languages factories are an abstraction of constructors but not strictly a generalization, as 
+constructors are not themselves factories. 
+Terminology differs as to whether the concept of a factory is itself a design pattern – in the seminal 
+book Design Patterns there is no "factory pattern", but instead two patterns (factory method 
+pattern and abstract factory pattern) that use factories. Some sources refer to the concept as the factory 
+pattern, while others consider the concept itself aprogramming idiom, reserving the term "factory 
+pattern" or "factory patterns" to more complicated patterns that use factories, most often the factory 
+method pattern; in this context, the concept of a factory itself may be referred to as a simple factory. In 
+other contexts, particularly the Python language, "factory" itself is used, as in this article. More broadly, 
+"factory" may be applied not just to an object that returns objects from some method call, but to 
+a subroutine that returns objects, as in a factory function (even if functions are not objects) or factory 
+method. Because in many languages factories are invoked by calling a method, the general concept of a 
+factory is often confused with the specific factory method pattern design pattern. 
+Using factories instead of constructors or prototypes allows one to use polymorphism for object creation, 
+not only object use. Specifically, using factories provides encapsulation, and means the code is not tied to 
+specific classes or objects, and thus the class hierarchy or prototypes can be changed or refactored without 
+needing to change code that uses them – they abstract from the class hierarchy or prototypes. 
+OOP provides polymorphism on object use by method dispatch, formally subtype 
+polymorphism via single dispatch determined by the type of the object on which the method is called. 
+However, this does not work for constructors, as constructors create an object of some type, rather 
+than using an existing object. More concretely, when a constructor is called, there is no object yet on 
+which to dispatch. 
+More technically, in languages where factories generalize constructors, factories can usually be used 
+anywhere constructors can be, meaning that interfaces that accept a constructor can also in general accept 
+a factory – usually one only need something that creates an object, rather than needing to specify a class 
+and instantiation. 
+For example, in Python, the collections.defaultdict class has a constructor which creates an object of 
+type defaultdict whose default values are produced by invoking a factory. The factory is passed as an 
+argument to the constructor, and can itself be a constructor, or anything that behaves like a constructor – a 
+callable object that returns an object, i.e., a factory. For example, using the list constructor for lists: 
+# collections.defaultdict([default_factory[, ...]]) 
+d = defaultdict(list) 
+Factory objects are used in situations where getting hold of an object of a particular kind is a more 
+complex process than simply creating a new object, notably if complex allocation or initialization is 
+desired. Some of the processes required in the creation of an object include determining which object to 
+create, managing the lifetime of the object, and managing specialized build-up and tear-down concerns of 
+the object. The factory object might decide to create the object's class (if applicable) dynamically, return 
+it from an object pool, do complex configuration on the object, or other things. Similarly, using this 
+definition, a singleton implemented by the singleton pattern is a formal factory – it returns an object, but 
+does not create new objects beyond the single instance. 
+Object Oriented System Design          
+Page: 55/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 56/69  
+    
+Example 
+The simplest example of a factory is a simple factory function, which just invokes a constructor and 
+returns the result. In Python, a factory function f that instantiates a class A can be implemented as: 
+def f(): 
+  return A() 
+A simple factory function implementing the singleton pattern is: 
+def f(): 
+  if f.obj is None: 
+    f.obj = A() 
+  return f.obj 
+  
+f.obj = None 
+This will create an object when first called, and always return the same object thereafter. 
+ 
+5.4 Delegation pattern 
+In software engineering, the delegation pattern is a design pattern in object-oriented programming where 
+an object, instead of performing one of its stated tasks, delegates that task to an associated helper object. 
+There is an Inversion of Responsibility in which a helper object, known as a delegate, is given the 
+responsibility to execute a task for the delegator. The delegation pattern is one of the 
+fundamental abstraction patterns that underlie other software patterns such as composition (also referred 
+to as aggregation), mixins and aspects. 
+Examples 
+Java examples 
+In this Java example, the Printer class has a print method. This print method, rather than performing the 
+print itself, delegates to class RealPrinter. To the outside world it appears that the Printer class is doing 
+the print, but the RealPrinter class is the one actually doing the work. 
+Delegation is simply passing a duty off to someone/something else. Here is a simple example: 
+ class RealPrinter { // the "delegate" 
+     void print() {  
+       System.out.println("something");  
+     } 
+ } 
+class Printer { // the "delegator" 
+     RealPrinter p = new RealPrinter(); // create the delegate  
+     void print() {  
+       p.print(); // delegation 
+     }  
+ } 
+ public class Main { 
+     // to the outside world it looks like Printer actually prints. 
+     public static void main(String[] args) { 
+         Printer printer = new Printer(); 
+         printer.print(); 
+     } 
+ } 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+C++ example  
+This example is a C++ version of the complex Java example above. Since C++ does not have an interface 
+construct, a pure virtual class plays the same role. The advantages and disadvantages are largely the same 
+as in the Java example. 
+#include <iostream> 
+using namespace std; 
+class I { 
+public: 
+virtual void f() = 0; 
+virtual void g() = 0; 
+virtual ~I() {} 
+}; 
+class A : public I { 
+public: 
+void f() { cout << "A: doing f()" << endl; } 
+void g() { cout << "A: doing g()" << endl; } 
+~A() { cout << "A: cleaning up." << endl; } 
+}; 
+class B : public I { 
+public: 
+void f() { cout << "B: doing f()" << endl; } 
+void g() { cout << "B: doing g()" << endl; } 
+~B() { cout << "B: cleaning up." << endl; } 
+}; 
+class C : public I { 
+public: 
+// construction/destruction 
+C() : i( new A() ) { } 
+virtual ~C() { delete i; } 
+private: 
+// delegation 
+I* i; 
+public: 
+void f() { i->f(); } 
+void g() { i->g(); } 
+// normal attributes 
+void toA() { delete i; i = new A(); } 
+void toB() { delete i; i = new B(); } 
+}; 
+Object Oriented System Design          
+Page: 57/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 58/69  
+    
+  
+int main() { 
+    C c; 
+    c.f();   //A: doing f() 
+    c.g();   //A: doing g() 
+    c.toB(); //A: cleaning up. 
+    c.f();   //B: doing f() 
+    c.g();   //B: doing g() 
+} 
+ 
+5.5 Applying GOF Design Pattern 
+Design patterns represent the best practices used by experienced object-oriented software developers. 
+Design patterns are solutions to general problems that software developers faced during software 
+development. These solutions were obtained by trial and error by numerous software developers over 
+quite a substantial period of time. 
+What is Gang of Four (GOF)? 
+In 1994, four authors Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides published a book 
+titled Design Patterns - Elements of Reusable Object-Oriented Software which initiated the concept 
+of Design Pattern in Software development. 
+ 
+These authors are collectively known as Gang of Four (GOF). According to these authors design 
+patterns are primarily based on the following principles of object orientated design. 
+ Program to an interface not an implementation 
+ Favour object composition over inheritance 
+Usage of Design Pattern 
+Design Patterns have two main usages in software development. 
+COMMON PLATFORM FOR DEVELOPERS 
+Design patterns provide a standard terminology and are specific to particular scenario. For example, a 
+singleton design pattern signifies use of single object so all developers familiar with single design pattern 
+will make use of single object and they can tell each other that program is following a singleton pattern. 
+BEST PRACTICES 
+Design patterns have been evolved over a long period of time and they provide best solutions to certain 
+problems faced during software development. Learning these patterns helps un-experienced developers to 
+learn software design in an easy and faster way. 
+Types of Design Pattern 
+As per the design pattern reference book Design Patterns - Elements of Reusable Object-Oriented 
+Software , there are 23 design patterns. These patterns can be classified in three categories: Creational, 
+Structural and behavioural patterns. We'll also discuss another category of design patterns: J2EE design 
+patterns. 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+S.N. 
+Pattern & Description 
+1 
+Creational Patterns 
+These design patterns provide way to create objects while hiding the creation logic, rather than 
+instantiating objects directly using new operator. This gives program more flexibility in deciding 
+which objects need to be created for a given use case. 
+2 
+Structural Patterns 
+These design patterns concern class and object composition. Concept of inheritance is used to 
+compose interfaces and define ways to compose objects to obtain new functionalities. 
+3 
+Behavioural Patterns 
+These design patterns are specifically concerned with communication between objects. 
+4 
+J2EE Patterns 
+These design patterns are specifically concerned with the presentation tier. These patterns are 
+identified by Sun Java Centre. 
+Name of the 23 design patterns 
+Factory Pattern 
+Abstract Factory Pattern 
+Singleton Pattern 
+Builder Pattern 
+Prototype Pattern 
+Adapter Pattern 
+Bridge Pattern 
+Filter/Criteria Pattern 
+Composite Pattern 
+Decorator Pattern 
+Facade Pattern 
+Flyweight Pattern 
+Proxy Pattern 
+Chain of Responsibility Pattern 
+Command Pattern 
+Interpreter Pattern 
+Iterator Pattern 
+Mediator Pattern 
+Memento Pattern 
+Observer Pattern 
+State Pattern 
+Null Object Pattern 
+Strategy Pattern 
+Template Pattern 
+Visitor Pattern 
+MVC Pattern 
+Business Delegate Pattern 
+Composite Entity Pattern 
+Data Access Object Pattern 
+Front Controller Pattern 
+Intercepting Filter Pattern 
+Service Locator Pattern 
+Transfer Object Pattern 
+Object Oriented System Design          
+Page: 59/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 60/69  
+    
+5.5.1 Factory Pattern 
+Factory pattern is one of most used design pattern in Java. This type of design pattern comes under 
+creational pattern as this pattern provides one of the best ways to create an object. 
+In Factory pattern, we create object without exposing the creation logic to the client and refer to newly 
+created object using a common interface. 
+Implementation 
+We're going to create a Shape interface and concrete classes implementing the Shape interface. A factory 
+class ShapeFactory is defined as a next step. 
+ 
+FactoryPatternDemo, our demo class will use ShapeFactory to get a Shape object. It will pass 
+information (CIRCLE / RECTANGLE / SQUARE) to ShapeFactory to get the type of object it needs. 
+ 
+ 
+Steps involved  
+Step 1 
+Create an interface. 
+Shape.java 
+public interface Shape { 
+   void draw(); 
+} 
+Step 2 
+Create concrete classes implementing the same interface. 
+Rectangle.java 
+public class Rectangle implements Shape { 
+ 
+   @Override 
+   public void draw() { 
+      System.out.println("Inside Rectangle::draw() method."); 
+   } 
+} 
+Square.java 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+Object Oriented System Design          Page: 61/69  
+    
+public class Square implements Shape { 
+ 
+   @Override 
+   public void draw() { 
+      System.out.println("Inside Square::draw() method."); 
+   } 
+} 
+Circle.java 
+public class Circle implements Shape { 
+ 
+   @Override 
+   public void draw() { 
+      System.out.println("Inside Circle::draw() method."); 
+   } 
+} 
+Step 3 
+Create a Factory to generate object of concrete class based on given information. 
+ShapeFactory.java 
+public class ShapeFactory { 
+  
+   //use getShape method to get object of type shape  
+   public Shape getShape(String shapeType){ 
+      if(shapeType == null){ 
+         return null; 
+      }   
+      if(shapeType.equalsIgnoreCase("CIRCLE")){ 
+         return new Circle(); 
+      } else if(shapeType.equalsIgnoreCase("RECTANGLE")){ 
+         return new Rectangle(); 
+      } else if(shapeType.equalsIgnoreCase("SQUARE")){ 
+         return new Square(); 
+      } 
+      return null; 
+   } 
+} 
+Step 4 
+Use the Factory to get object of concrete class by passing an information such as type. 
+FactoryPatternDemo.java 
+public class FactoryPatternDemo { 
+ 
+   public static void main(String[] args) { 
+      ShapeFactory shapeFactory = new ShapeFactory(); 
+ 
+      //get an object of Circle and call its draw method. 
+      Shape shape1 = shapeFactory.getShape("CIRCLE"); 
+ 
+      //call draw method of Circle 
+      shape1.draw(); 
+ 
+      //get an object of Rectangle and call its draw method. 
+      Shape shape2 = shapeFactory.getShape("RECTANGLE"); 
+ 
+      //call draw method of Rectangle 
+      shape2.draw(); 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+Object Oriented System Design          Page: 62/69  
+    
+ 
+      //get an object of Square and call its draw method. 
+      Shape shape3 = shapeFactory.getShape("SQUARE"); 
+ 
+      //call draw method of circle 
+      shape3.draw(); 
+   } 
+} 
+ 
+Step 5 
+Verify the output. 
+Inside Circle::draw() method. 
+Inside Rectangle::draw() method. 
+Inside Square::draw() method. 
+ 
+5.5.2 Singleton Pattern 
+Singleton pattern is one of the simplest design patterns in Java. This type of design pattern comes under 
+creational pattern as this pattern provides one of the best way to create an object. 
+This pattern involves a single class which is responsible to creates own object while making sure that 
+only single object get created. This class provides a way to access its only object which can be accessed 
+directly without need to instantiate the object of the class. 
+ 
+Implementation 
+We're going to create a SingleObject class. SingleObject class have its constructor as private and have a 
+static instance of itself. 
+ 
+SingleObject class provides a static method to get its static instance to outside 
+world.SingletonPatternDemo, our demo class will use SingleObject class to get a SingleObject object. 
+ 
+ 
+Step 1  
+Create a Singleton Class. 
+SingleObject.java 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+public class SingleObject { 
+//create an object of SingleObject 
+private static SingleObject instance = new SingleObject(); 
+//make the constructor private so that this class cannot be 
+//instantiated 
+private SingleObject(){} 
+//Get the only object available 
+public static SingleObject getInstance(){ 
+return instance; 
+} 
+public void showMessage(){ 
+System.out.println("Hello World!"); 
+} 
+} 
+Step 2 
+Get the only object from the singleton class. 
+SingletonPatternDemo.java 
+public class SingletonPatternDemo { 
+public static void main(String[] args) { 
+//illegal construct 
+//Compile Time Error: The constructor SingleObject() is not visible 
+//SingleObject object = new SingleObject(); 
+//Get the only object available 
+SingleObject object = SingleObject.getInstance(); 
+//show the message 
+object.showMessage(); 
+} 
+} 
+Verify the output. 
+Hello World! 
+5.5.3 Adapter Pattern 
+Step 3 
+Adapter pattern works as a bridge between two incompatible interfaces. This type of design pattern comes 
+under structural pattern as this pattern combines the capability of two independent interfaces. 
+This pattern involves a single class which is responsible to join functionalities of independent or 
+incompatible interfaces. A real life example could be a case of card reader which acts as an adapter 
+between memory card and a laptop. You plugins the memory card into card reader and card reader into 
+the laptop so that memory card can be read via laptop. 
+We are demonstrating use of Adapter pattern via following example in which an audio player device can 
+play mp3 files only and wants to use an advanced audio player capable of playing vlc and mp4 files. 
+Implementation 
+Object Oriented System Design          
+Page: 63/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 64/69  
+    
+ We've an interface MediaPlayer interface and a concrete class AudioPlayer implementing 
+theMediaPlayer interface. AudioPlayer can play mp3 format audio files by default. 
+ We're having another interface AdvancedMediaPlayer and concrete classes implementing 
+theAdvancedMediaPlayer interface.These classes can play vlc and mp4 format files. 
+ We want to make AudioPlayer to play other formats as well. To attain this, we've created an adapter 
+classMediaAdapter which implements the MediaPlayer interface and 
+uses AdvancedMediaPlayer objects to play the required format. 
+ AudioPlayer uses the adapter class MediaAdapter passing it the desired audio type without knowing 
+the actual class which can play the desired format. AdapterPatternDemo, our demo class will 
+useAudioPlayer class to play various formats. 
+ 
+Step 1 
+Create interfaces for Media Player and Advanced Media Player. 
+MediaPlayer.java 
+public interface MediaPlayer { 
+   public void play(String audioType, String fileName); 
+} 
+AdvancedMediaPlayer.java 
+public interface AdvancedMediaPlayer {  
+   public void playVlc(String fileName); 
+   public void playMp4(String fileName); 
+} 
+Step 2 
+Create concrete classes implementing the AdvancedMediaPlayer interface. 
+VlcPlayer.java 
+public class VlcPlayer implements AdvancedMediaPlayer{ 
+   @Override 
+   public void playVlc(String fileName) { 
+      System.out.println("Playing vlc file. Name: "+ fileName);   
+   } 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+Object Oriented System Design          Page: 65/69  
+    
+ 
+   @Override 
+   public void playMp4(String fileName) { 
+      //do nothing 
+   } 
+} 
+ 
+Mp4Player.java 
+public class Mp4Player implements AdvancedMediaPlayer{ 
+ 
+   @Override 
+   public void playVlc(String fileName) { 
+      //do nothing 
+   } 
+ 
+   @Override 
+   public void playMp4(String fileName) { 
+      System.out.println("Playing mp4 file. Name: "+ fileName);   
+   } 
+} 
+Step 3 
+Create adapter class implementing the MediaPlayer interface. 
+MediaAdapter.java 
+public class MediaAdapter implements MediaPlayer { 
+ 
+   AdvancedMediaPlayer advancedMusicPlayer; 
+ 
+   public MediaAdapter(String audioType){ 
+      if(audioType.equalsIgnoreCase("vlc") ){ 
+         advancedMusicPlayer = new VlcPlayer();    
+      } else if (audioType.equalsIgnoreCase("mp4")){ 
+         advancedMusicPlayer = new Mp4Player(); 
+      }  
+   } 
+ 
+   @Override 
+   public void play(String audioType, String fileName) { 
+      if(audioType.equalsIgnoreCase("vlc")){ 
+         advancedMusicPlayer.playVlc(fileName); 
+      }else if(audioType.equalsIgnoreCase("mp4")){ 
+         advancedMusicPlayer.playMp4(fileName); 
+      } 
+   } 
+} 
+Step 4 
+Create concrete class implementing the MediaPlayer interface. 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+Object Oriented System Design          Page: 66/69  
+    
+AudioPlayer.java 
+public class AudioPlayer implements MediaPlayer { 
+   MediaAdapter mediaAdapter;  
+ 
+   @Override 
+   public void play(String audioType, String fileName) {   
+ 
+      //inbuilt support to play mp3 music files 
+      if(audioType.equalsIgnoreCase("mp3")){ 
+         System.out.println("Playing mp3 file. Name: "+ fileName);    
+      }  
+      //mediaAdapter is providing support to play other file formats 
+      else if(audioType.equalsIgnoreCase("vlc")  
+         || audioType.equalsIgnoreCase("mp4")){ 
+         mediaAdapter = new MediaAdapter(audioType); 
+         mediaAdapter.play(audioType, fileName); 
+      } 
+      else{ 
+         System.out.println("Invalid media. "+ 
+            audioType + " format not supported"); 
+      } 
+   }    
+} 
+ 
+Step 5 
+Use the AudioPlayer to play different types of audio formats. 
+AdapterPatternDemo.java 
+public class AdapterPatternDemo { 
+   public static void main(String[] args) { 
+      AudioPlayer audioPlayer = new AudioPlayer(); 
+ 
+      audioPlayer.play("mp3", "beyond the horizon.mp3"); 
+      audioPlayer.play("mp4", "alone.mp4"); 
+      audioPlayer.play("vlc", "far far away.vlc"); 
+      audioPlayer.play("avi", "mind me.avi"); 
+   } 
+} 
+ 
+Step 6 
+Verify the output. 
+Playing mp3 file. Name: beyond the horizon.mp3 
+Playing mp4 file. Name: alone.mp4 
+Playing vlc file. Name: far far away.vlc 
+Invalid media. avi format not supported 
+ 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+5.5.4 Observer Pattern 
+Observer pattern is used when there is one to many relationship between objects such as if one object is 
+modified, its depenedent objects are to be notified automatically. Observer pattern falls under behavioral 
+pattern category. 
+Implementation 
+Observer pattern uses three actor classes. Subject, Observer and Client. Subject, an object having methods 
+to attach and de-attach observers to a client object. We've created classes Subject, Observerabstract class 
+and concrete classes extending the abstract class the Observer. 
+ObserverPatternDemo, our demo class will use Subject and concrete class objects to show observer 
+pattern in action. 
+Step 1 
+Create Subject class. 
+Subject.java 
+import java.util.ArrayList; 
+import java.util.List; 
+public class Subject { 
+private List<Observer> observers  
+= new ArrayList<Observer>(); 
+private int state; 
+public int getState() { 
+return state; 
+} 
+public void setState(int state) { 
+this.state = state; 
+notifyAllObservers(); 
+} 
+public void attach(Observer observer){ 
+Object Oriented System Design          
+Page: 67/69  
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+Object Oriented System Design          Page: 68/69  
+    
+      observers.add(observer);   
+   } 
+ 
+   public void notifyAllObservers(){ 
+      for (Observer observer : observers) { 
+         observer.update(); 
+      } 
+   }   
+} 
+Step 2 
+Create Observer class. 
+Observer.java 
+public abstract class Observer { 
+   protected Subject subject; 
+   public abstract void update(); 
+} 
+Step 3 
+Create concrete observer classes 
+BinaryObserver.java 
+public class BinaryObserver extends Observer{ 
+ 
+   public BinaryObserver(Subject subject){ 
+      this.subject = subject; 
+      this.subject.attach(this); 
+   } 
+ 
+   @Override 
+   public void update() { 
+      System.out.println( "Binary String: "  
+      + Integer.toBinaryString( subject.getState() ) );  
+   } 
+} 
+OctalObserver.java 
+public class OctalObserver extends Observer{ 
+ 
+   public OctalObserver(Subject subject){ 
+      this.subject = subject; 
+      this.subject.attach(this); 
+   } 
+ 
+   @Override 
+   public void update() { 
+     System.out.println( "Octal String: "  
+     + Integer.toOctalString( subject.getState() ) );  
+   } 
+} 
+HexaObserver.java 
+public class HexaObserver extends Observer{ 
+ 
+   public HexaObserver(Subject subject){ 
+      this.subject = subject; 
+      this.subject.attach(this); 
+   } 
+Downloaded by Ashutosh Tiwari (tashutosh204@gmail.com)
+lOMoARcPSD|39110224
+lOMoARcPSD|39110224
+@Override 
+public void update() { 
+System.out.println( "Hex String: "  
++ Integer.toHexString( subject.getState() ).toUpperCase() );  
+} 
+} 
+Step 4 
+Use Subject and concrete observer objects. 
+ObserverPatternDemo.java 
+public class ObserverPatternDemo { 
+public static void main(String[] args) { 
+Subject subject = new Subject(); 
+new HexaObserver(subject); 
+new OctalObserver(subject); 
+new BinaryObserver(subject); 
+System.out.println("First state change: 15");  
+subject.setState(15); 
+System.out.println("Second state change: 10");  
+subject.setState(10); 
+} 
+} 
+Step 5 
+Verify the output. 
+First state change: 15 
+Hex String: F 
+Octal String: 17 
+Binary String: 1111 
+Second state change: 10 
+Hex String: A 
+Octal String: 12 
+Binary String: 1010 
+Object Oriented System Design          
+Page: 69/69  
